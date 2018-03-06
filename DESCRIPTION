@@ -1,0 +1,16 @@
+Package: rwavelet
+Type: Package
+Title: rwavelet
+Version: 0.1.0
+Author: F. Navarro and C. Chesneau (R port), D. Donoho, A. Maleki and M. Shahram (Matlab original)
+Maintainer: Navarro Fabien <fabien.navarro@ensai.fr>
+Description: This package carries out orthogonal wavelet analysis. Most of the code is a translation of MATLAB Wavelab Toolbox (https://statweb.stanford.edu/~wavelab/).
+License: LGPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports: dplyr,
+    signal
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

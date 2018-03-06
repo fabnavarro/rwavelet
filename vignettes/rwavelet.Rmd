@@ -1,0 +1,142 @@
+---
+title: 'Rwavelet Vignette'
+author: "Christophe Chesneau and Fabien Navarro"
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_document:
+    theme: cerulean
+    number_sections: yes
+    toc: yes
+    toc_depth: 5
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{Rwavelet Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{R.rsp::asis}
+  %\VignetteKeyword{PDF}
+---
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 12px;
+  }
+td {  /* Table  */
+  font-size: 8px;
+}
+h1.title {
+  font-size: 38px;
+  color: DarkRed;
+}
+h1 { /* Header 1 */
+  font-size: 28px;
+  color: DarkBlue;
+}
+h2 { /* Header 2 */
+    font-size: 18px;
+  color: DarkBlue;
+}
+h3 { /* Header 3 */
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+}
+code.r{ /* Code block */
+    font-size: 12px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 14px;
+}
+</style>
+
+```{r, echo=FALSE}
+# Store output format for later use
+options(vignetteDocumentFormat= rmarkdown::all_output_formats("rwavelet.Rmd"))
+# compiler la ligne suivante pour avoir un pdf
+#rmarkdown::render("rwavelet.Rmd", output_format="html_document")
+```
+
+
+# Basic use
+```{r, echo=FALSE, message=FALSE}
+devtools::load_all() 
+par(mgp = c(2,0.5,0),
+    mar = c(4,3,2,1),
+    oma = c(1,1,0,0))
+```
+
+## 1d examples
+### Load and plot a signal from the MakeSigal function {#example1}
+```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+J <- 10; n <- 2^J; t <- (1:n) / n
+name <- c('Bumps')
+f <- MakeSignal(name, n)
+plot(t, f, xlab="t", ylab="f(t)",
+     type='l', lwd=1.2, main=name)
+```
+
+### Plot a noisy version of the original function {#example2}
+```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+SNR <- 4
+set.seed(1)
+ssig <- sd(f)
+sigma <- ssig / SNR
+y <- f + rnorm(n, mean=0, sd=sigma)
+plot(t, y, xlab="t", ylab="y", main=paste("Noisy", name))
+```
+
+### Forward Wavelet Transform (periodized, orthogonal) {#example3}
+```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+qmf <- MakeONFilter('Daubechies', 10)
+L <- 3
+wc <- FWT_PO(y, L, qmf)
+```
+
+### Spike-plot display of wavelet coefficients {#example4}
+```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+PlotWaveCoeff(wc, L, 0.5)
+```
+
+### Universal hard thresholding  {#example5}
+```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+hatsigma <- MAD(wc[(2^(J-1)+1):2^J])
+thr <- sqrt(2*log(length(y)))*hatsigma
+wc[(2^(L)+1):n] <- HardThresh(wc[(2^(L)+1):n], thr)
+fest <- IWT_PO(wc, L, qmf)
+snrout <- SNR(f, fest)
+plot(t, fest, type='l', lwd=1.4, col='red', xlab="t", ylab="hat_f(t)",
+	   main=format(round(snrout,2), nsmall=2))
+matlines(t, f, type='l', lty=2)
+```
+
+## 2d examples
+### Load and plot an image
+```{r, echo=FALSE, message=FALSE}
+library(imager)
+```
+
+```{r, echo=TRUE,fig.width=5, fig.height=5, message=FALSE, fig.align="center"}
+name <- '../inst/extdata/lena.png'
+f <- load.image(name)
+plot(f, axes=F, interpolate=F, xlab="", ylab="")
+```
+
+### Plot a noisy version of the original image
+```{r, echo=TRUE,fig.width=5, fig.height=5, message=FALSE, fig.align="center"}
+ssig <- sd(f)
+sdnoise <- ssig/SNR
+y <- f + rnorm(ncol(f)*nrow(f), mean=0, sd=sdnoise)
+snrin <- SNR(f,y)
+plot(y, axes=F, interpolate=F, xlab="", ylab="",
+     main=format(round(snrin,2), nsmall = 2))
+```
+
+### Image denoising using hard thresholding
+```{r, echo=TRUE,fig.width=5, fig.height=5, message=FALSE, fig.align="center"}
+wc <- FWT2_PO(as.array(squeeze(y)), L, qmf)
+thr <- 3*sdnoise
+aT <- wc*(abs(wc)>thr)
+fest <- IWT2_PO(aT, L, qmf)
+snrout <- SNR(f, fest)
+plot(as.cimg(fest), axes=FALSE, xlab="", ylab="",
+     main=format(round(snrout,2), nsmall=2))
+```
