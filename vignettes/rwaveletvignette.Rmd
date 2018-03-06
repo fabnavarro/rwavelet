@@ -12,8 +12,7 @@ output:
 vignette: >
   %\VignetteIndexEntry{Rwavelet Vignette}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEngine{R.rsp::asis}
-  %\VignetteKeyword{PDF}
+  %\usepackage[utf8]{inputenc}
 ---
 <style type="text/css">
 
@@ -49,13 +48,13 @@ pre { /* Code block - determines code spacing between lines */
 </style>
 
 ```{r, echo=FALSE}
-options(vignetteDocumentFormat= rmarkdown::all_output_formats("rwavelet.Rmd"))
+#options(vignetteDocumentFormat=rmarkdown::all_output_formats("rwaveletvignette.Rmd"))
 ```
 
 
 # Basic use
 ```{r, echo=FALSE, message=FALSE}
-devtools::load_all() 
+library(rwavelet)
 par(mgp = c(2,0.5,0),
     mar = c(4,3,2,1),
     oma = c(1,1,0,0))
