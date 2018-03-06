@@ -49,10 +49,7 @@ pre { /* Code block - determines code spacing between lines */
 </style>
 
 ```{r, echo=FALSE}
-# Store output format for later use
 options(vignetteDocumentFormat= rmarkdown::all_output_formats("rwavelet.Rmd"))
-# compiler la ligne suivante pour avoir un pdf
-#rmarkdown::render("rwavelet.Rmd", output_format="html_document")
 ```
 
 
