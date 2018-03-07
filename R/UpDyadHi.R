@@ -6,9 +6,9 @@
 #' @param qmf filter.
 #' @return \code{u} 1-d signal at finer scale.
 #' @examples
-#' \dontrun{
-#' UpDyadHi(d,f)
-#' }
+#' qmf <- MakeONFilter('Haar')
+#' x <- MakeSignal('HeaviSine',2^3)
+#' UpDyadHi(x,qmf)
 #' @seealso \code{\link{DownDyadLo}}, \code{\link{DownDyadHi}},
 #' \code{\link{UpDyadLo}}, \code{\link{IWT_PO}}, \code{\link{aconv}}.
 
