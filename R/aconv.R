@@ -8,9 +8,9 @@
 #' @param x 1-d signal.
 #' @return \code{y} filtered result.
 #' @examples
-#' \dontrun{
-#' aconv(f,x)
-#' }
+#' qmf <- MakeONFilter('Haar')
+#' x <- MakeSignal('HeaviSine',2^3)
+#' aconv(qmf,x)
 #' @seealso \code{\link{iconvv}}, \code{\link{UpDyadHi}},
 #' \code{\link{UpDyadLo}}, \code{\link{DownDyadHi}}, \code{\link{DownDyadLo}}.
 
