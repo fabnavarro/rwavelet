@@ -2,7 +2,9 @@
 #'
 #' @export MakeSignal
 #' @param name string, 'HeaviSine', 'Bumps', 'Blocks',
-#'             'Doppler', 'Ramp','Cusp', 'Sing'.
+#'             'Doppler', 'Ramp','Cusp', 'Sing', 'HiSine',
+#'             'LoSine', 'LinChirp',
+#'
 #' @param n desired signal length
 #' @return \code{sig} 1-d signal.
 #' @examples
@@ -55,7 +57,20 @@ MakeSignal <- function(name, n) {
     k <- floor(n * 0.37)
     sig <- 1/abs(t - (k + 0.5)/n)
     return(sig)
-  } else {
+  }
+  if (name == "HiSine") {
+    sig <- sin( pi * (n * .6902) * t)
+    return(sig)
+  }
+  if (name == "LoSine") {
+    sig <- sin( pi * (n * .3333) * t)
+    return(sig)
+  }
+  if (name == "LinChirp") {
+    sig <- sin(pi * t * ((n * .500) * t))
+    return(sig)
+  }
+  else {
     print("Allowable Names are:")
     print("HeaviSine")
     print("Bumps")
@@ -64,5 +79,8 @@ MakeSignal <- function(name, n) {
     print("Ramp")
     print("Cusp")
     print("Sing")
+    print("HiSine")
+    print("LoSine")
+    print("LinChirp")
   }
 }
