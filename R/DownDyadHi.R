@@ -5,11 +5,9 @@
 #' @param qmf filter.
 #' @return \code{y} 1-d signal at coarse scale.
 #' @examples
-#' \dontrun{
-#' qmf <- MakeONFilter("Haar")
-#' x <- MakeSignal("HeaviSine",2^3)
+#' qmf <- MakeONFilter('Haar')
+#' x <- MakeSignal('HeaviSine',2^3)
 #' DownDyadHi(x, qmf)
-#' }
 #' @seealso \code{\link{DownDyadLo}}, \code{\link{UpDyadHi}},
 #' \code{\link{UpDyadLo}}, \code{\link{FWT_PO}}, \code{\link{iconvv}}.
 
