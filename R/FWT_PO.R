@@ -10,10 +10,10 @@
 #' @param qmf quadrature mirror filter (orthonormal).
 #' @return \code{wc} 1-d wavelet transform of x.
 #' @examples
-#' x <- MakeSignal("Ramp",8)
+#' x <- MakeSignal('Ramp', 8)
 #' L <- 0
-#' qmf <- MakeONFilter("Haar")
-#' wc <- FWT_PO(x,L,qmf)
+#' qmf <- MakeONFilter('Haar')
+#' wc <- FWT_PO(x, L, qmf)
 #' @seealso \code{\link{IWT_PO}}, \code{\link{MakeONFilter}}.
 
 FWT_PO <- function(x, L, qmf) {
