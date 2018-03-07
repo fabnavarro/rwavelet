@@ -7,9 +7,12 @@
 #' @return A display of wavelet coefficients (coarsest level
 #'         NOT included) by level and position.
 #' @examples
-#' \dontrun{
+#' x <- MakeSignal('Ramp', 128)
+#' qmf <- MakeONFilter('Daubechies', 10)
+#' L <- 3
+#' scal <- 1
+#' wc <- FWT_PO(x, L, qmf)
 #' PlotWaveCoeff(wc,L,scal)
-#' }
 #' @seealso \code{\link{FWT_PO}}, \code{\link{IWT_PO}}, \code{\link{PlotSpikes}}.
 #' @import graphics
 
