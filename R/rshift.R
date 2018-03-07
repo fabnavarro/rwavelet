@@ -4,9 +4,8 @@
 #' @param a 1-d signal.
 #' @return \code{r} 1-d signal r(i) = x(i-1) except r(1) = x(n).
 #' @examples
-#' \dontrun{
+#' x <- MakeSignal('HeaviSine',2^3)
 #' rshift(x)
-#' }
 
 rshift <- function(a) {
   n <- length(a)
