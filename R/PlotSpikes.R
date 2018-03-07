@@ -10,7 +10,7 @@
 #' @return A plot of spikes on a baseline.
 #' @examples
 #' \dontrun{
-#' PlotSpikes(base,t,x, L)
+#' PlotSpikes(base,t,x, L, J)
 #' }
 #' @seealso \code{\link{PlotWaveCoeff}}.
 #' @import stats graphics
