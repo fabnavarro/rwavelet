@@ -6,9 +6,9 @@
 #' @param n desired signal length
 #' @return \code{sig} 1-d signal.
 #' @examples
-#' \dontrun{
-#' sig <- MakeSignal(Name,n)
-#' }
+#' name <- 'Cusp'
+#' n <- 2^5
+#' sig <- MakeSignal(name,n)
 #' @seealso \code{\link{FWT_PO}}, \code{\link{IWT_PO}}, \code{\link{FWT2_PO}}, \code{\link{IWT2_PO}}.
 
 
