@@ -7,9 +7,7 @@
 #' @return \code{n} length(x).
 #' @return \code{J} least power of two greater than n.
 #' @examples
-#' \dontrun{
-#' quadlength(x)
-#' }
+#' quadlength(matrix(1:16,ncol=4))
 
 quadlength <- function(x) {
   s <- dim(x)
