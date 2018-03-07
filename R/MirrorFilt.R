@@ -7,9 +7,8 @@
 #' @return \code{h} 1-d signal with DC frequency content shifted.
 #'                  to Nyquist frequency
 #' @examples
-#' \dontrun{
+#' x <- MakeSignal('HeaviSine',2^3)
 #' h <- MirrorFilt(x)
-#' }
 #' @seealso \code{\link{DownDyadHi}}.
 
 MirrorFilt <- function(x) {
