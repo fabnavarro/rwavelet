@@ -18,9 +18,9 @@ iconvv(f, x)
 Filtering by periodic convolution of x with f.
 }
 \examples{
-\dontrun{
-iconvv(f,x)
-}
+qmf <- MakeONFilter('Haar')
+x <- MakeSignal('HeaviSine',2^3)
+iconvv(qmf,x)
 }
 \seealso{
 \code{\link{aconv}}, \code{\link{UpDyadHi}},
