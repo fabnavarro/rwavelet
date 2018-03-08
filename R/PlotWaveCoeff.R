@@ -23,7 +23,7 @@ PlotWaveCoeff <- function(wc, L, scal) {
   J <- dyadlength(wavecoef)$y
   if (scal == 0) {
     scal <- 1/max(abs(wavecoef[(2^L + 1):n]))
-
+    
   }
   for (j in seq(J - 1, L, -1)) {
     tj <- (0.5:(2^(j) - 0.5))/2^(j)
