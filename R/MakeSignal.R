@@ -5,7 +5,10 @@
 #'             'Doppler', 'Ramp','Cusp', 'Sing', 'HiSine',
 #'             'LoSine', 'LinChirp', 'TwoChirp', 'QuadChirp',
 #'             'MishMash', 'WernerSorrows' (Heisenberg),
-#'             'Leopold' (Kronecker), 'Riemann', 'HypChirps'
+#'             'Leopold' (Kronecker), 'Riemann', 'HypChirps',
+#'             'LinChirps', 'Chirps', 'Gabor', 'sineoneoverx',
+#'             'Cusp2', 'Piece-Regular' (Piece-Wise Smooth),
+#'
 #'
 #' @param n desired signal length
 #' @return \code{sig} 1-d signal.
@@ -27,7 +30,7 @@ MakeSignal <- function(name, n) {
   if (name == "Bumps") {
     pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.4, 0.44, 0.65, 0.76, 0.78, 0.81)
     hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)
-    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008, 
+    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008,
       0.005)
     sig <- 2 * rep(0, length(t))
     for (j in 1:length(pos)) {
@@ -94,7 +97,7 @@ MakeSignal <- function(name, n) {
     sig <- sig + sin(pi * t * (n * t))
     pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.4, 0.44, 0.65, 0.76, 0.78, 0.81)
     hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)
-    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008, 
+    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008,
       0.005)
     for (j in 1:length(pos)) {
       sig <- sig + hgt[j]/(1 + abs((t - pos[j])/wth[j]))^4
@@ -112,6 +115,7 @@ MakeSignal <- function(name, n) {
     return(sig)
   }
   if (name == "HypChirps") {
+    # Hyperbolic Chirps of Mallat's book
     alpha <- 15 * n * pi/1024
     beta <- 5 * n * pi/1024
     t <- (1.001:(n + 0.001))/n
@@ -127,24 +131,120 @@ MakeSignal <- function(name, n) {
     env <- rep(1, n)
     env[ceiling(n/10):(M + ceiling(n/10) - 1)] <- enveloppe[1:M]
     sig <- (f1 + f2) * env
-  } else {
-    cat("Allowable Names are:")
-    cat("HeaviSine")
-    cat("Bumps")
-    cat("Blocks")
-    cat("Doppler")
-    cat("Ramp")
-    cat("Cusp")
-    cat("Sing")
-    cat("HiSine")
-    cat("LoSine")
-    cat("LinChirp")
-    cat("TwoChirp")
-    cat("QuadChirp")
-    cat("MishMash")
-    cat("WernerSorrows")
-    cat("Leopold")
-    cat("Riemann")
-    cat("HypChirps")
+  }
+  if (name == "LinChirps") {
+    # Linear Chirps of Mallat's book
+    b <- 100 * n * pi/1024
+    a <- 250 * n * pi/1024
+    t <- (1:n)/n
+    A1 <- sqrt((t - 1/n) * (1 - t))
+    sig <- A1 * (cos((a * (t)^2)) + cos((b * t + a * (t)^2)))
+  }
+  if (name == "Chirps") {
+    # Linear Chirps of Mallat's book
+    t <- (1:n)/n * 10 * pi
+    f1 <- cos(t^2 * n/1024)
+    a <- 30 * n/1024
+    t <- (1:n)/n * pi
+    f2 <- cos(a * (t^3))
+    f2 <- rev(f2)
+    ix <- (-n:n)/n * 20
+    g <- exp(-ix^2 * 4 * n/1024)
+    i1 <- ((n/2 + 1):(n/2 + n))
+    i2 <- ((n/8 + 1):(n/8 + n))
+    j <- (1:n)/n
+    f3 <- g[i1] * cos(50 * pi * j * n/1024)
+    f4 <- g[i2] * cos(350 * pi * j * n/1024)
+    sig <- f1 + f2 + f3 + f4
+    enveloppe <- rep(1, n)  # the rising cutoff function
+    enveloppe[1:(n/8)] <- (1 + sin(-pi/2 + ((1:(n/8)) - rep(1, n/8))/(n/8 -
+      1) * pi))/2
+    enveloppe[(7 * n/8 + 1):n] <- rev(enveloppe[1:(n/8)])
+    sig <- sig * enveloppe
+  }
+  if (name == "Gabor") {
+    # two modulated Gabor functions in Mallat's book
+    N <- 512
+    t <- (-N:N) * 5/N
+    j <- (1:N)/N
+    g <- exp(-t^2 * 20)
+    i1 <- ((2 * N/4 + 1):(2 * N/4 + N))
+    i2 <- ((N/4 + 1):(N/4 + N))
+    sig1 <- 3 * g[i1] * exp((0 + (0+1i)) * N/16 * pi * j)
+    sig2 <- 3 * g[i2] * exp((0 + (0+1i)) * N/4 * pi * j)
+    sig <- sig1 + sig2
+  }
+  if (name == "sineoneoverx") {
+    # sin(1/x) in Mallat's book
+    N <- 1024
+    i1 <- ((-N + 1):N)
+    i1[N] <- 1/100
+    i1 <- i1/(N - 1)
+    sig <- sin(1.5/(i1))
+    sig <- sig[513:1536]
+  }
+  if (name == "Cusp2") {
+    N <- 64
+    i1 <- (1:N)/N
+    x <- (1-sqrt(i1)) + i1/2 -.5
+    M <- 8*N
+    sig <- rep(0, M)
+    sig[(M-1.5*N+1):(M-.5*N)] <- x
+    sig[(M-2.5*N+2):(M-1.5*N+1)] <- rev(x)
+    sig[(3*N+1):(3*N + N)] <- .5*rep(1,N)
+    sig
+  }
+  # affectation prob
+  # if (name == "Piece-Regular") {
+  #   sig1 <- -15*MakeSignal('Bumps',n)
+  #   t <- (1:trunc(n/12))/trunc(n/12)
+  #   sig2 <- -exp(4*t)
+  #   t <- (1:trunc(n/7))/trunc(n/7)
+  #   sig5 <- exp(4*t)-exp(4)
+  #   t <- (1:trunc(n/3))/trunc(n/3)
+  #   sigma <- 6/40
+  #   sig6 <- -70*exp(-((t-1/2)*(t-1/2))/(2*sigma^2))
+  #   sig[1:trunc(n/7)] <- sig6[1:trunc(n/7)]
+  #   sig[(trunc(n/7)+1):trunc(n/5)] <- 0.5*sig6[(trunc(n/7)+1):trunc(n/5)]
+  #   sig[(trunc(n/5)+1):trunc(n/3)] <- sig6[(trunc(n/5)+1):trunc(n/3)]
+  #   sig[(trunc(n/3)+1):trunc(n/2)] <- sig1[(trunc(n/3)+1):trunc(n/2)]
+  #   sig[(trunc(n/2)+1):(trunc(n/2)+trunc(n/12))] <- sig2
+  #   sig[(trunc(n/2)+2*trunc(n/12)):(trunc(n/2)+trunc(n/12)+1)] <- sig2
+  #   sig[(trunc(n/2)+2*trunc(n/12)+trunc(n/20)+1):(trunc(n/2)+2*trunc(n/12)+3*trunc(n/20))] <-
+  #     -rep(1,trunc(n/2)+2*trunc(n/12)+3*trunc(n/20)-trunc(n/2)-2*trunc(n/12)-trunc(n/20))*25
+  #   k <- trunc(n/2) + 2*trunc(n/12)+3*trunc(n/20)
+  #   sig[(k+1):(k+trunc(n/7))] <- sig5
+  #   diff <- n-5*trunc(n/5)
+  #   #sig[(5*trunc(n/5)+1):n] <- sig[rev(seq_len(diff))]
+  #   # zero-mean
+  #   bias <- sum(sig)/n
+  #   sig <- bias-sig
+  # }
+
+  else {
+    print("Allowable Names are:")
+    print("HeaviSine")
+    print("Bumps")
+    print("Blocks")
+    print("Doppler")
+    print("Ramp")
+    print("Cusp")
+    print("Sing")
+    print("HiSine")
+    print("LoSine")
+    print("LinChirp")
+    print("TwoChirp")
+    print("QuadChirp")
+    print("MishMash")
+    print("WernerSorrows")
+    print("Leopold")
+    print("Riemann")
+    print("HypChirps")
+    print("LinChirps")
+    print("Chirps")
+    print("Gabor")
+    print("sineoneoverx")
+    print("Cusp2")
+    #print("Piece-Regular")
   }
 }
