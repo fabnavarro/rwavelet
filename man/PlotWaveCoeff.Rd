@@ -21,9 +21,12 @@ A display of wavelet coefficients (coarsest level
 Spike-plot display of wavelet coefficients.
 }
 \examples{
-\dontrun{
+x <- MakeSignal('Ramp', 128)
+qmf <- MakeONFilter('Daubechies', 10)
+L <- 3
+scal <- 1
+wc <- FWT_PO(x, L, qmf)
 PlotWaveCoeff(wc,L,scal)
-}
 }
 \seealso{
 \code{\link{FWT_PO}}, \code{\link{IWT_PO}}, \code{\link{PlotSpikes}}.
