@@ -22,6 +22,3 @@ Apply Hard Threshold.
 HardThresh(y,t)
 }
 }
-\seealso{
-\code{\link{iconv}}, \code{\link{UpDyadHi}},
-}
