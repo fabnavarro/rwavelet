@@ -5,7 +5,7 @@
 #' @return \code{n} length(x).
 #' @return \code{J} least power of two greater than n.
 #' @examples
-#' x <- MakeSignal("Ramp",8)
+#' x <- MakeSignal('Ramp', 8)
 #' dyadlength(x)
 #' @seealso \code{\link{quadlength}}, \code{\link{dyad}}
 
