@@ -18,9 +18,9 @@ UpDyadHi(x, qmf)
 Hi-Pass Upsampling operator; periodized
 }
 \examples{
-\dontrun{
-UpDyadHi(d,f)
-}
+qmf <- MakeONFilter('Haar')
+x <- MakeSignal('HeaviSine',2^3)
+UpDyadHi(x,qmf)
 }
 \seealso{
 \code{\link{DownDyadLo}}, \code{\link{DownDyadHi}},
