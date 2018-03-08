@@ -8,7 +8,12 @@ MakeSignal(name, n)
 }
 \arguments{
 \item{name}{string, 'HeaviSine', 'Bumps', 'Blocks',
-'Doppler', 'Ramp','Cusp', 'Sing'.}
+'Doppler', 'Ramp','Cusp', 'Sing', 'HiSine',
+'LoSine', 'LinChirp', 'TwoChirp', 'QuadChirp',
+'MishMash', 'WernerSorrows' (Heisenberg),
+'Leopold' (Kronecker), 'Riemann', 'HypChirps',
+'LinChirps', 'Chirps', 'Gabor', 'sineoneoverx',
+'Cusp2', 'Piece-Regular' (Piece-Wise Smooth),}
 
 \item{n}{desired signal length}
 }
@@ -19,10 +24,11 @@ MakeSignal(name, n)
 Make artificial signal.
 }
 \examples{
-\dontrun{
-sig <- MakeSignal(Name,n)
-}
+name <- 'Cusp'
+n <- 2^5
+sig <- MakeSignal(name,n)
 }
 \seealso{
-\code{\link{FWT_PO}}, \code{\link{IWT_PO}}, \code{\link{FWT2_PO}}, \code{\link{IWT2_PO}}.
+\code{\link{FWT_PO}}, \code{\link{IWT_PO}}, \code{\link{FWT2_PO}},
+\code{\link{IWT2_PO}}.
 }
