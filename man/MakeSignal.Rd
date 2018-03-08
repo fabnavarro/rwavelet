@@ -13,7 +13,8 @@ MakeSignal(name, n)
 'MishMash', 'WernerSorrows' (Heisenberg),
 'Leopold' (Kronecker), 'Riemann', 'HypChirps',
 'LinChirps', 'Chirps', 'Gabor', 'sineoneoverx',
-'Cusp2', 'Piece-Regular' (Piece-Wise Smooth),}
+'Cusp2', 'Piece-Regular' (Piece-Wise Smooth),
+'Piece-Polynomial' (Piece-Wise 3rd degree polynomial),}
 
 \item{n}{desired signal length}
 }
