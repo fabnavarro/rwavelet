@@ -22,9 +22,11 @@ mirror filter, e.g. one made by\code{\link{MakeONFilter}}.
 Then x can be reconstructed by \code{x <- IWT_PO(wc,L,qmf)}.
 }
 \examples{
-\dontrun{
-x <- IWT_PO(wc,L,qmf)
-}
+x <- MakeSignal('Ramp', 8)
+L <- 0
+qmf <- MakeONFilter('Haar')
+wc <- FWT_PO(x, L, qmf)
+xr <- IWT_PO(wc,L,qmf)
 }
 \seealso{
 \code{\link{FWT_PO}}, \code{\link{MakeONFilter}}.
