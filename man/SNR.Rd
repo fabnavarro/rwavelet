@@ -18,7 +18,8 @@ Signal/Noise ratio.
 Signal/Noise ratio
 }
 \examples{
-\dontrun{
-value=SNR(x,y)
-}
+n <- 2^4
+x <- MakeSignal('HeaviSine', n)
+y <- x + rnorm(n, mean=0, sd=1)
+SNR(x, y)
 }
