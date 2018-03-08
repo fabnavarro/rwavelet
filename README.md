@@ -1,26 +1,36 @@
-# rwavelet
+rwavelet
+========
 
 Wavelet Transforms in R
 
-## Installation
+Download and Install
+--------------------
+
 Install the devtools package if you haven't already.
 
-    install.packages("devtools")
+``` r
+install.packages("devtools")
+```
 
-Run
+To install the package, type the following at the R command line:
 
-    devtools::install_github("fabnavarro/rwavelet")
-    library(rwavelet)
+``` r
+devtools::install_github("fabnavarro/rwavelet")
+library(rwavelet)
+```
 
-## Getting started
-See the [package vignette](http://fnavarro.perso.math.cnrs.fr/rpackage/rwaveletvignette.html) for details.
-You could also build and see the vignette associated with the package using the following lines of code
+Getting started
+---------------
 
-    devtools::install_github("fabnavarro/rwavelet", build_vignettes = TRUE)
-    library(rwavelet)
-    
+See the [package vignette](http://fnavarro.perso.math.cnrs.fr/rpackage/rwaveletvignette.html) for details. You could also build and see the vignette associated with the package using the following lines of code
+
+``` r
+devtools::install_github("fabnavarro/rwavelet", build_vignettes = TRUE)
+library(rwavelet)
+```
+
 Then, to view the vignette
 
-    vignette("rwaveletvignette")
-
-
+``` r
+vignette("rwaveletvignette")
+```
