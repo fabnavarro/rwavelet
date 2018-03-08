@@ -17,9 +17,8 @@ MirrorFilt(x)
 h(t) = (-1)^(t-1)  * x(t),  1 <= t <= length(x)
 }
 \examples{
-\dontrun{
+x <- MakeSignal('HeaviSine',2^3)
 h <- MirrorFilt(x)
-}
 }
 \seealso{
 \code{\link{DownDyadHi}}.
