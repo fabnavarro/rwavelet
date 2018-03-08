@@ -48,9 +48,9 @@ The parameter Par gives the degree of the spline. The number of
 vanishing moments is Par+1.
 }
 \examples{
-\dontrun{
-qmf <- MakeONFilter(Type,Par)
-}
+Type <- 'Coiflet'
+Par <- 1
+qmf <- MakeONFilter(Type, Par)
 }
 \seealso{
 \code{\link{FWT_PO}}, \code{\link{IWT_PO}}, \code{\link{FWT2_PO}}, \code{\link{IWT2_PO}}.
