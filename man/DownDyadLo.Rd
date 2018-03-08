@@ -18,8 +18,8 @@ DownDyadLo(x, qmf)
 Lo-Pass Downsampling operator (periodized)
 }
 \examples{
-qmf <- MakeONFilter("Haar")
-x <- MakeSignal("HeaviSine",2^3)
+qmf <- MakeONFilter('Haar')
+x <- MakeSignal('HeaviSine',2^3)
 DownDyadLo(x,qmf)
 }
 \seealso{
