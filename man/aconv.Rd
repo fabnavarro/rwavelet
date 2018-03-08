@@ -19,9 +19,9 @@ Filtering by periodic convolution of x with the
 time-reverse of f.
 }
 \examples{
-\dontrun{
-aconv(f,x)
-}
+qmf <- MakeONFilter('Haar')
+x <- MakeSignal('HeaviSine',2^3)
+aconv(qmf,x)
 }
 \seealso{
 \code{\link{iconvv}}, \code{\link{UpDyadHi}},
