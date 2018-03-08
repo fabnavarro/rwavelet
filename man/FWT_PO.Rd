@@ -22,10 +22,10 @@ FWT_PO(x, L, qmf)
 3. To reconstruct use \code{\link{IWT_PO}}.
 }
 \examples{
-x <- MakeSignal("Ramp",8)
+x <- MakeSignal('Ramp', 8)
 L <- 0
-qmf <- MakeONFilter("Haar")
-wc <- FWT_PO(x,L,qmf)
+qmf <- MakeONFilter('Haar')
+wc <- FWT_PO(x, L, qmf)
 }
 \seealso{
 \code{\link{IWT_PO}}, \code{\link{MakeONFilter}}.
