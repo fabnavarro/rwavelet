@@ -51,14 +51,20 @@ pre { /* Code block - determines code spacing between lines */
 #options(vignetteDocumentFormat=rmarkdown::all_output_formats("rwaveletvignette.Rmd"))
 ```
 
-
-# Basic use
-```{r, echo=FALSE, message=FALSE}
+```{r Setup, include=FALSE}
+library(rwavelet)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+set.seed(0)
 library(rwavelet)
 par(mgp = c(2,0.5,0),
     mar = c(4,3,2,1),
     oma = c(1,1,0,0))
 ```
+
+# Basic use
 
 ## 1d examples
 ### Load and plot a signal from the MakeSignal function {#example1}
