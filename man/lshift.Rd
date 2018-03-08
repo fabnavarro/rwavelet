@@ -16,7 +16,6 @@ lshift(a)
 Circular left shift of 1-d signal
 }
 \examples{
-\dontrun{
+x <- MakeSignal('HeaviSine',2^3)
 lshift(x)
-}
 }
