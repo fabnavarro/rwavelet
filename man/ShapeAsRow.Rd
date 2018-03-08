@@ -16,7 +16,6 @@ ShapeAsRow(sig)
 Make signal a row vector
 }
 \examples{
-\dontrun{
+sig <- matrix(1:4)
 row <- ShapeAsRow(sig)
-}
 }
