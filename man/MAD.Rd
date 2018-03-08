@@ -13,7 +13,6 @@ MAD(x)
 Compute the median absolute deviation.
 }
 \examples{
-\dontrun{
+x <- c(1, 1, 2, 2, 4, 6, 9)
 MAD(x)
-}
 }
