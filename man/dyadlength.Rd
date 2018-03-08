@@ -18,7 +18,7 @@ dyadlength(x)
 Find length and dyadic length of array
 }
 \examples{
-x <- MakeSignal("Ramp",8)
+x <- MakeSignal('Ramp', 8)
 dyadlength(x)
 }
 \seealso{
