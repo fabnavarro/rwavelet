@@ -55,7 +55,10 @@ pre { /* Code block - determines code spacing between lines */
 library(rwavelet)
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width=5,
+  fig.height=5, 
+  fig.align="center"
 )
 set.seed(0)
 library(rwavelet)
@@ -68,7 +71,7 @@ par(mgp = c(2,0.5,0),
 
 ## 1d examples
 ### Load and plot a signal from the MakeSignal function {#example1}
-```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+```{r, echo=TRUE}
 J <- 10; n <- 2^J; t <- (1:n) / n
 name <- c('Bumps')
 f <- MakeSignal(name, n)
@@ -77,7 +80,7 @@ plot(t, f, xlab="t", ylab="f(t)",
 ```
 
 ### Plot a noisy version of the original function {#example2}
-```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+```{r, echo=TRUE}
 SNR <- 4
 set.seed(1)
 ssig <- sd(f)
@@ -87,7 +90,7 @@ plot(t, y, xlab="t", ylab="y", main=paste("Noisy", name))
 ```
 
 ### Forward Wavelet Transform (periodized, orthogonal) {#example3}
-```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+```{r, echo=TRUE}
 qmf <- MakeONFilter('Daubechies', 10)
 L <- 3
 wc <- FWT_PO(y, L, qmf)
@@ -95,7 +98,7 @@ wcf <- FWT_PO(f, L, qmf)
 ```
 
 ### Spike-plot display of wavelet coefficients {#example4}
-```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+```{r, echo=TRUE}
 PlotWaveCoeff(wc, L, 0.5)
 title("Noisy Wavelet Coefs")
 PlotWaveCoeff(wcf, L, 0.5)
@@ -103,7 +106,7 @@ title("Original Wavelet Coefs")
 ```
 
 ### Universal hard thresholding  {#example5}
-```{r, echo=TRUE,fig.width=5, fig.height=5, fig.align="center"}
+```{r, echo=TRUE}
 # estimate sigma using the maximum absolute deviation
 # using only the fine scale of wc
 hatsigma <- MAD(wc[(2^(J-1)+1):2^J])
@@ -126,14 +129,14 @@ matlines(t, f, type='l', lty=2)
 library(imager)
 ```
 
-```{r, echo=TRUE,fig.width=5, fig.height=5, message=FALSE, fig.align="center"}
+```{r, echo=TRUE, message=FALSE}
 name <- '../inst/extdata/lena.png'
 f <- load.image(name)
 plot(f, axes=F, interpolate=F, xlab="", ylab="")
 ```
 
 ### Plot a noisy version of the original image
-```{r, echo=TRUE,fig.width=5, fig.height=5, message=FALSE, fig.align="center"}
+```{r, echo=TRUE, message=FALSE}
 ssig <- sd(f)
 sdnoise <- ssig/SNR
 y <- f + rnorm(ncol(f)*nrow(f), mean=0, sd=sdnoise)
@@ -143,7 +146,7 @@ plot(y, axes=F, interpolate=F, xlab="", ylab="",
 ```
 
 ### Image denoising using hard thresholding
-```{r, echo=TRUE,fig.width=5, fig.height=5, message=FALSE, fig.align="center"}
+```{r, echo=TRUE, message=FALSE}
 wc <- FWT2_PO(as.array(squeeze(y)), L, qmf)
 thr <- 3*sdnoise
 aT <- wc*(abs(wc)>thr)
