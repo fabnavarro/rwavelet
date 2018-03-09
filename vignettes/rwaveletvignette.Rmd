@@ -91,18 +91,28 @@ plot(t, y, xlab="t", ylab="y", main=paste("Noisy", name))
 qmf <- MakeONFilter('Daubechies', 10)
 L <- 3
 wc <- FWT_PO(y, L, qmf)
+wcf <- FWT_PO(f, L, qmf)
 ```
 
 ### Spike-plot display of wavelet coefficients {#example4}
 ```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
 PlotWaveCoeff(wc, L, 0.5)
+title("Noisy Wavelet Coefs")
+PlotWaveCoeff(wcf, L, 0.5)
+title("Original Wavelet Coefs")
 ```
 
 ### Universal hard thresholding  {#example5}
-```{r, echo=TRUE,fig.width=4, fig.height=4, fig.align="center"}
+```{r, echo=TRUE,fig.width=5, fig.height=5, fig.align="center"}
+# estimate sigma using the maximum absolute deviation
+# using only the fine scale of wc
 hatsigma <- MAD(wc[(2^(J-1)+1):2^J])
 thr <- sqrt(2*log(length(y)))*hatsigma
+# apply hard thresholding 
 wc[(2^(L)+1):n] <- HardThresh(wc[(2^(L)+1):n], thr)
+# plot the resulting coeficients estimates
+PlotWaveCoeff(wc, L, 0.5)
+title("Estimated Wavelet Coefs")
 fest <- IWT_PO(wc, L, qmf)
 snrout <- SNR(f, fest)
 plot(t, fest, type='l', lwd=1.4, col='red', xlab="t", ylab="hat_f(t)",
