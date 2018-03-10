@@ -196,6 +196,17 @@ MakeSignal <- function(name, n) {
     sig[(3*N+1):(3*N + N)] <- .5*rep(1,N)
     sig
   }
+  # trad fftshift from matlab first
+  # if (name == "SmoothCusp") {
+  #   sig <- MakeSignal('Cusp2')
+  #   N <- 64
+  #   M <- 8*N
+  #   t <- (1:M)/M
+  #   sigma <- 0.01
+  #   g <- exp(-.5*(abs(t-.5)/sigma)^2)/sigma/sqrt(2*pi)
+  #   g <- fftshift(g)
+  #   sig2 <- t(iconvv(t(g),sig))/M
+  # }
   # affectation prob
   # if (name == "Piece-Regular") {
   #   sig1 <- -15*MakeSignal('Bumps',n)
@@ -269,6 +280,7 @@ MakeSignal <- function(name, n) {
     print("Gabor")
     print("sineoneoverx")
     print("Cusp2")
+    #print("SmoothCusp")
     #print("Piece-Regular")
     #print("Piece-Polynomial")
   }
