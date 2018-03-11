@@ -123,11 +123,9 @@ matlines(t, f, type='l', lty=2)
 
 # 2d examples
 ## Load and plot an image
-```{r, echo=FALSE, message=FALSE}
-library(imager)
-```
 
 ```{r, echo=TRUE, message=FALSE}
+library(imager)
 name <- '../inst/extdata/lena.png'
 f <- load.image(name)
 plot(f, axes=F, interpolate=F, xlab="", ylab="")
