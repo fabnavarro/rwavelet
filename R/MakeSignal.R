@@ -1,6 +1,7 @@
 #' Make artificial signal.
 #'
 #' @export MakeSignal
+#' @import utils
 #' @param name string, 'HeaviSine', 'Bumps', 'Blocks',
 #'             'Doppler', 'Ramp','Cusp', 'Sing', 'HiSine',
 #'             'LoSine', 'LinChirp', 'TwoChirp', 'QuadChirp',
