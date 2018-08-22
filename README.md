@@ -37,8 +37,8 @@ Then, to view the vignette
 vignette("rwaveletvignette")
 ```
 
-Citation
---------
+How to cite
+-----------
 
 ``` r
 citation("rwavelet")
