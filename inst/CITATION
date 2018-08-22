@@ -1,0 +1,21 @@
+PKG <- meta$Package
+VERSION <- meta$Version
+TITLE <- meta$Title
+AUTHORS <- meta$Author # packageDescription(PKG, fields = 'Author')
+URL <- meta$URL # packageDescription(PKG, fields = 'URL')
+YEAR <- sub("-.*", "", meta$Date) # strftime(packageDescription(PKG, fields = 'Date'), '%Y')
+
+bibentry(bibtype = "Manual",
+	title = sprintf("R package {%s}: %s", PKG, TITLE),
+	author = AUTHORS,
+	year = YEAR,
+	note = sprintf("(Version %s)", VERSION),
+	url = URL,
+
+	mheader = sprintf("To cite %s in publications use:", PKG),
+
+	textVersion = sprintf(
+    "%s (%s). R package %s: %s (Version %s). Available from %s",
+    AUTHORS, YEAR, PKG, TITLE, VERSION, URL
+	)
+)
