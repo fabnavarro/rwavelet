@@ -3,7 +3,7 @@ rwavelet
 
 [![Build Status](https://travis-ci.org/fabnavarro/rwavelet.svg)](https://travis-ci.org/fabnavarro/rwavelet)
 
-Wavelet Transforms in R
+Wavelet analysis in R
 
 Download and Install
 --------------------
