@@ -36,3 +36,26 @@ Then, to view the vignette
 ``` r
 vignette("rwaveletvignette")
 ```
+
+Citation
+--------
+
+``` r
+citation("rwavelet")
+#> 
+#> To cite rwavelet in publications use:
+#> 
+#>   F. Navarro and C. Chesneau (2018). R package rwavelet: Wavelet
+#>   analysis in R (Version 0.1.0). Available from
+#>   http://github.com/fabnavarro/rwavelet
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {R package {rwavelet}: Wavelet analysis in R},
+#>     author = {F. Navarro and C. Chesneau},
+#>     year = {2018},
+#>     note = {(Version 0.1.0)},
+#>     url = {http://github.com/fabnavarro/rwavelet},
+#>   }
+```

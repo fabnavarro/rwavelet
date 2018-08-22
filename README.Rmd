@@ -43,3 +43,8 @@ Then, to view the vignette
 ```{r, eval=FALSE}
 vignette("rwaveletvignette")
 ```
+
+## Citation
+```{r Cite me}
+citation("rwavelet")
+```
