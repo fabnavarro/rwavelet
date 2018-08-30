@@ -12,6 +12,6 @@
 #' \code{\link{UpDyadHi}}, \code{\link{IWT_PO}}, \code{\link{iconvv}}.
 
 UpDyadLo <- function(x, qmf) {
-  y <-iconvv(qmf, UpSampleN(x))
+  y <- iconvv(qmf, UpSampleN(x))
   return(y)
 }

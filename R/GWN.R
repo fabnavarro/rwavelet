@@ -9,4 +9,5 @@
 
 GWN <- function(n, sigma) {
   epsilon <- rnorm(n = n, mean = 0, sd = sigma)
+  return(epsilon)
 }
