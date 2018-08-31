@@ -200,7 +200,14 @@ MakeSignal <- function(name, n) {
   # ToDo: trad fftshift from matlab
   #
   if (name == "SmoothCusp") {
-    sig <- MakeSignal('Cusp2',n)
+    N <- 64
+    i1 <- (1:N)/N
+    x <- (1-sqrt(i1)) + i1/2 -.5
+    M <- 8*N
+    sig <- rep(0, M)
+    sig[(M-1.5*N+1):(M-.5*N)] <- x
+    sig[(M-2.5*N+2):(M-1.5*N+1)] <- rev(x)
+    sig[(3*N+1):(3*N + N)] <- .5*rep(1,N)
     N <- 64
     M <- 8*N
     t <- (1:M)/M
@@ -211,6 +218,15 @@ MakeSignal <- function(name, n) {
   }
   # affectation prob
   # if (name == "Piece-Regular") {
+  #   pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.4, 0.44, 0.65, 0.76, 0.78, 0.81)
+  #   hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)
+  #   wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008,
+  #            0.005)
+  #   sigb <- 2 * rep(0, length(t))
+  #   for (j in 1:length(pos)) {
+  #     sigb <- sigb + hgt[j]/((1 + (abs(t - pos[j])/wth[j]))^4)
+  #   }
+  #   #sig1 <- -15*sigb
   #   sig1 <- -15*MakeSignal('Bumps',n)
   #   t <- (1:trunc(n/12))/trunc(n/12)
   #   sig2 <- -exp(4*t)
