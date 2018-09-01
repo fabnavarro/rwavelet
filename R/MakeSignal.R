@@ -245,29 +245,30 @@ MakeSignal <- function(name, n) {
     bias <- sum(sig)/n
     sig <- bias-sig
   }
-  # if (name == "Piece-Polynomial") {
-  #   t <- (1:trunc(n/5))/trunc(n/5)
-  #   sig1 <- 20*(t^3+t^2+4)
-  #   sig3 <- 40*(2*t^3+t) + 100
-  #   sig2 <- 10*t^3 + 45
-  #   sig4 <- 16*t^2+8*t+16
-  #   sig5 <- 20*(t+4);
-  #   sig6[1:trunc(n/10)] <- rep(1,trunc(n/10))
-  #   sig6 <- sig6*20
-  #   sig[1:trunc(n/5)] <- sig1
-  #   sig[(2*trunc(n/5)):(trunc(n/5)+1)] <- sig2
-  #   sig[(2*trunc(n/5)+1):(3*trunc(n/5))] <- sig3
-  #   sig[(3*trunc(n/5)+1):(4*trunc(n/5))]  <- sig4
-  #   sig[(4*trunc(n/5)+1):(5*trunc(n/5))] <- sig5[trunc(n/5):1]
-  #   diff <- n-5*trunc(n/5)
-  #   sig[(5*trunc(n/5)+1):n] <- sig[diff:1]
-  #   #sig((trunc(n/20)+1):(trunc(n/20)+trunc(n/10)))<--rep(1,trunc(n/10))*20;
-  #   sig[(trunc(n/20)+1):(trunc(n/20)+trunc(n/10))] <- rep(1,trunc(n/10))*10
-  #   sig[(n-trunc(n/10)+1):(n+trunc(n/20)-trunc(n/10))] <- rep(1,trunc(n/20))*150
-  #   # zero-mean
-  #   bias <- sum(sig)/n
-  #   sig <- sig-bias
-  # }
+  if (name == "Piece-Polynomial") {
+    t <- (1:trunc(n/5))/trunc(n/5)
+    sig1 <- 20*(t^3+t^2+4)
+    sig3 <- 40*(2*t^3+t) + 100
+    sig2 <- 10*t^3 + 45
+    sig4 <- 16*t^2+8*t+16
+    sig5 <- 20*(t+4);
+    sig6[1:trunc(n/10)] <- rep(1,trunc(n/10))
+    sig6 <- sig6*20
+    sig <- rep(0,n)
+    sig[1:trunc(n/5)] <- sig1
+    sig[(2*trunc(n/5)):(trunc(n/5)+1)] <- sig2
+    sig[(2*trunc(n/5)+1):(3*trunc(n/5))] <- sig3
+    sig[(3*trunc(n/5)+1):(4*trunc(n/5))]  <- sig4
+    sig[(4*trunc(n/5)+1):(5*trunc(n/5))] <- sig5[trunc(n/5):1]
+    diff <- n-5*trunc(n/5)
+    if (diff!=0){sig[(5*trunc(n/5)+1):n] <- sig[diff:1]}
+    sig[(trunc(n/20)+1):(trunc(n/20)+trunc(n/10))] <- rep(1,trunc(n/10))*10
+    if (trunc(n/20)!=0){
+    sig[(n-trunc(n/10)+1):(n+trunc(n/20)-trunc(n/10))] <- rep(1,trunc(n/20))*150}
+    # zero-mean
+    bias <- sum(sig)/n
+    sig <- sig-bias
+  }
   else {
     print("Allowable Names are:")
     print("HeaviSine")
@@ -294,6 +295,6 @@ MakeSignal <- function(name, n) {
     print("Cusp2")
     print("SmoothCusp")
     print("Piece-Regular")
-    #print("Piece-Polynomial")
+    print("Piece-Polynomial")
   }
 }
