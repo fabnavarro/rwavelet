@@ -216,41 +216,35 @@ MakeSignal <- function(name, n) {
     g <- c(tail(g,ceiling(length(g)/2)),head(g,ceiling(length(g)/2)))
     sig2 <- iconvv(g,sig)/M
   }
-  # affectation prob
-  # if (name == "Piece-Regular") {
-  #   pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.4, 0.44, 0.65, 0.76, 0.78, 0.81)
-  #   hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)
-  #   wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008,
-  #            0.005)
-  #   sigb <- 2 * rep(0, length(t))
-  #   for (j in 1:length(pos)) {
-  #     sigb <- sigb + hgt[j]/((1 + (abs(t - pos[j])/wth[j]))^4)
-  #   }
-  #   #sig1 <- -15*sigb
-  #   sig1 <- -15*MakeSignal('Bumps',n)
-  #   t <- (1:trunc(n/12))/trunc(n/12)
-  #   sig2 <- -exp(4*t)
-  #   t <- (1:trunc(n/7))/trunc(n/7)
-  #   sig5 <- exp(4*t)-exp(4)
-  #   t <- (1:trunc(n/3))/trunc(n/3)
-  #   sigma <- 6/40
-  #   sig6 <- -70*exp(-((t-1/2)*(t-1/2))/(2*sigma^2))
-  #   sig[1:trunc(n/7)] <- sig6[1:trunc(n/7)]
-  #   sig[(trunc(n/7)+1):trunc(n/5)] <- 0.5*sig6[(trunc(n/7)+1):trunc(n/5)]
-  #   sig[(trunc(n/5)+1):trunc(n/3)] <- sig6[(trunc(n/5)+1):trunc(n/3)]
-  #   sig[(trunc(n/3)+1):trunc(n/2)] <- sig1[(trunc(n/3)+1):trunc(n/2)]
-  #   sig[(trunc(n/2)+1):(trunc(n/2)+trunc(n/12))] <- sig2
-  #   sig[(trunc(n/2)+2*trunc(n/12)):(trunc(n/2)+trunc(n/12)+1)] <- sig2
-  #   sig[(trunc(n/2)+2*trunc(n/12)+trunc(n/20)+1):(trunc(n/2)+2*trunc(n/12)+3*trunc(n/20))] <-
-  #     -rep(1,trunc(n/2)+2*trunc(n/12)+3*trunc(n/20)-trunc(n/2)-2*trunc(n/12)-trunc(n/20))*25
-  #   k <- trunc(n/2) + 2*trunc(n/12)+3*trunc(n/20)
-  #   sig[(k+1):(k+trunc(n/7))] <- sig5
-  #   diff <- n-5*trunc(n/5)
-  #   #sig[(5*trunc(n/5)+1):n] <- sig[rev(seq_len(diff))]
-  #   # zero-mean
-  #   bias <- sum(sig)/n
-  #   sig <- bias-sig
-  # }
+  if (name == "Piece-Regular") {
+    sig1 <- -15*MakeSignal('Bumps',n)
+    t <- (1:trunc(n/12))/trunc(n/12)
+    sig2 <- -exp(4*t)
+    t <- (1:trunc(n/7))/trunc(n/7)
+    sig5 <- exp(4*t)-exp(4)
+    t <- (1:trunc(n/3))/trunc(n/3)
+    sigma <- 6/40
+    sig6 <- -70*exp(-((t-1/2)*(t-1/2))/(2*sigma^2))
+    sig <- rep(0,n)
+    sig[1:trunc(n/7)] <- sig6[1:trunc(n/7)]
+    sig[(trunc(n/7)+1):trunc(n/5)] <- 0.5*sig6[(trunc(n/7)+1):trunc(n/5)]
+    sig[(trunc(n/5)+1):trunc(n/3)] <- sig6[(trunc(n/5)+1):trunc(n/3)]
+    sig[(trunc(n/3)+1):trunc(n/2)] <- sig1[(trunc(n/3)+1):trunc(n/2)]
+    sig[(trunc(n/2)+1):(trunc(n/2)+trunc(n/12))] <- sig2
+    sig[(trunc(n/2)+2*trunc(n/12)):(trunc(n/2)+trunc(n/12)+1)] <- sig2
+    ind <- trunc(n/2)+2*trunc(n/12)+3*trunc(n/20)-trunc(n/2)-2*trunc(n/12)-trunc(n/20)
+    if (ind!=0){
+    sig[(trunc(n/2)+2*trunc(n/12)+trunc(n/20)+1):(trunc(n/2)+2*trunc(n/12)+3*trunc(n/20))] <-
+      -rep(1,trunc(n/2)+2*trunc(n/12)+3*trunc(n/20)-trunc(n/2)-2*trunc(n/12)-trunc(n/20))*25
+    }
+    k <- trunc(n/2) + 2*trunc(n/12)+3*trunc(n/20)
+    sig[(k+1):(k+trunc(n/7))] <- sig5
+    diff <- n-5*trunc(n/5)
+    if (diff!=0){sig[(5*trunc(n/5)+1):n] <- sig[rev(seq_len(diff))]}
+    # zero-mean
+    bias <- sum(sig)/n
+    sig <- bias-sig
+  }
   # if (name == "Piece-Polynomial") {
   #   t <- (1:trunc(n/5))/trunc(n/5)
   #   sig1 <- 20*(t^3+t^2+4)
@@ -299,7 +293,7 @@ MakeSignal <- function(name, n) {
     print("sineoneoverx")
     print("Cusp2")
     print("SmoothCusp")
-    #print("Piece-Regular")
+    print("Piece-Regular")
     #print("Piece-Polynomial")
   }
 }
