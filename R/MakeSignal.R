@@ -22,7 +22,6 @@
 #' @seealso \code{\link{FWT_PO}}, \code{\link{IWT_PO}}, \code{\link{FWT2_PO}},
 #' \code{\link{IWT2_PO}}.
 
-
 MakeSignal <- function(name, n) {
   t <- (1:n)/n
   if (name == "HeaviSine") {
