@@ -43,7 +43,7 @@ Ywd <- FWT_PO(Y, j0, qmf)
 Ywnoise <- Ywd
 ```
 
-We estimate the standard deviation *σ* of th noise using the maximum absolute deviation (with only the finest scale coefficients). We apply a hard thresholding rule (with a universal threshold) to the coefficient estimators and obtain the estimator by applying an inverse transform.
+We estimate the standard deviation *σ* of the noise using the maximum absolute deviation (with only the finest scale coefficients). We apply a hard thresholding rule (with a universal threshold) to the coefficient estimators and obtain the estimator by applying an inverse transform.
 
 ``` r
 hatsigma <- MAD(Ywd[(2^(J-1)+1):2^J])
@@ -52,16 +52,18 @@ Ywd[(2^(j0)+1):n] <- HardThresh(Ywd[(2^(j0)+1):n], lambda)
 fhat <- IWT_PO(Ywd, j0, qmf)
 ```
 
+Finally,
+
 ``` r
 par(mfrow=c(2,2), mgp = c(1.2, 0.5, 0), tcl = -0.2,
     mar = .1 + c(2.5,2.5,1,1), oma = c(0,0,0,0))
-plot(t,Y,xlab="", ylab="")
-plot(t,Y,xlab="", ylab="")
+plot(t,Y,xlab="", ylab="", main="Observations")
+plot(t,Y,xlab="", ylab="", main="Observations and Estimator")
 matlines(t, fhat, lwd=2, col="blue", lty=1)
-plot(Ywnoise, ylim=c(-20, 20), xlab="", ylab="")
+plot(Ywnoise, ylim=c(-20, 20), xlab="", ylab="", main = "Noisy Coefficients")
 matlines(rep(lambda, n), lwd=2,col="red",lty=1)
 matlines(-rep(lambda, n), lwd=2,col="red",lty=1)
-plot(Ywd, ylim=c(-20,20), xlab="", ylab="")
+plot(Ywd, ylim=c(-20,20), xlab="", ylab="", main = "Estimated Coefficients")
 ```
 
 ![](inst/doc/readme_img/NMR-1.png)
