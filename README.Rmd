@@ -34,7 +34,7 @@ library(rwavelet)
 ## Getting started
 
 Here is an example of denoising of an experimental nuclear magnetic resonance (NMR) spectrum. We start by loading the data.
-```{r, NMR, fig.width=8, fig.height=4}
+```{r}
 data("RaphNMR")
 Y <- RaphNMR
 n <- length(Y)
@@ -46,7 +46,6 @@ Then we specify the coarse decomposition scale $j_0$, the wavelets we want to us
 j0 <- 0
 J <- log2(n)
 qmf <- MakeONFilter('Symmlet',6)
-
 Ywd <- FWT_PO(Y, j0, qmf)
 Ywnoise <- Ywd
 ```
@@ -59,9 +58,10 @@ Ywd[(2^(j0)+1):n] <- HardThresh(Ywd[(2^(j0)+1):n], lambda)
 fhat <- IWT_PO(Ywd, j0, qmf)
 ```
 
-```{r, NMR, fig.width=8, fig.height=4}
+
+```{r, NMR, fig.width=8, fig.height=5}
 par(mfrow=c(2,2), mgp = c(1.2, 0.5, 0), tcl = -0.2,
-    mar = .1 + c(2,2,1,1), oma = c(0,0,0,0))
+    mar = .1 + c(2.5,2.5,1,1), oma = c(0,0,0,0))
 plot(t,Y,xlab="", ylab="")
 plot(t,Y,xlab="", ylab="")
 matlines(t, fhat, lwd=2, col="blue", lty=1)

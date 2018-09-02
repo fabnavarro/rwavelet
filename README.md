@@ -24,38 +24,43 @@ library(rwavelet)
 Getting started
 ---------------
 
-Denoising of an experimental nuclear magnetic resonance (NMR) spectrum
+Here is an example of denoising of an experimental nuclear magnetic resonance (NMR) spectrum. We start by loading the data.
 
 ``` r
 data("RaphNMR")
-j0 <- 0
 Y <- RaphNMR
 n <- length(Y)
 t <- seq(0, 1, length = n)
+```
+
+Then we specify the coarse decomposition scale *j*<sub>0</sub>, the wavelets we want to use (here, Symmlet with 6 null moments) and we perform a fast wavelet transform to get the noisy wavelet coefficients (Ywd).
+
+``` r
+j0 <- 0
 J <- log2(n)
 qmf <- MakeONFilter('Symmlet',6)
-
-
-Ywd <- FWT_PO(Y,j0,qmf)
+Ywd <- FWT_PO(Y, j0, qmf)
 Ywnoise <- Ywd
+```
 
-# estimate sigma using the maximum absolute deviation
-# (using only the finest scale coefficients)
+We estimate the standard deviation *σ* of th noise using the maximum absolute deviation (with only the finest scale coefficients). We apply a hard thresholding rule (with a universal threshold) to the coefficient estimators and obtain the estimator by applying an inverse transform.
+
+``` r
 hatsigma <- MAD(Ywd[(2^(J-1)+1):2^J])
-# universal thresholding
 lambda <- sqrt(2*log(n))*hatsigma
-# apply hard thresholding 
-Ywd[(2^(j0)+1):n] <- HardThresh(Ywd[(2^(j0)+1):n],lambda)
+Ywd[(2^(j0)+1):n] <- HardThresh(Ywd[(2^(j0)+1):n], lambda)
 fhat <- IWT_PO(Ywd, j0, qmf)
+```
 
+``` r
 par(mfrow=c(2,2), mgp = c(1.2, 0.5, 0), tcl = -0.2,
-    mar = .1 + c(2,2,1,1), oma = c(0,0,0,0))
-plot(t,Y,xlab="",ylab="")
-plot(t,Y,xlab="",ylab="")
+    mar = .1 + c(2.5,2.5,1,1), oma = c(0,0,0,0))
+plot(t,Y,xlab="", ylab="")
+plot(t,Y,xlab="", ylab="")
 matlines(t, fhat, lwd=2, col="blue", lty=1)
 plot(Ywnoise, ylim=c(-20, 20), xlab="", ylab="")
-matlines(rep(lambda,n), lwd=2,col="red",lty=1)
-matlines(-rep(lambda,n), lwd=2,col="red",lty=1)
+matlines(rep(lambda, n), lwd=2,col="red",lty=1)
+matlines(-rep(lambda, n), lwd=2,col="red",lty=1)
 plot(Ywd, ylim=c(-20,20), xlab="", ylab="")
 ```
 
