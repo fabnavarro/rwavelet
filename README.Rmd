@@ -40,6 +40,8 @@ Y <- RaphNMR
 n <- length(Y)
 t <- seq(0, 1, length = n)
 J <- log2(n)
+qmf <- MakeONFilter('Symmlet',6)
+
 
 Ywd <- FWT_PO(Y,j0,qmf)
 Ywnoise <- Ywd
@@ -51,8 +53,10 @@ hatsigma <- MAD(Ywd[(2^(J-1)+1):2^J])
 lambda <- sqrt(2*log(n))*hatsigma
 # apply hard thresholding 
 Ywd[(2^(j0)+1):n] <- HardThresh(Ywd[(2^(j0)+1):n],lambda)
+fhat <- IWT_PO(Ywd, j0, qmf)
 
-par(mfrow=c(2,2))
+par(mfrow=c(2,2), mgp = c(1.2, 0.5, 0), tcl = -0.2,
+    mar = .1 + c(1,1,1,1), oma = c(0,0,0,0))
 plot(t,Y,xlab="",ylab="")
 plot(t,Y,xlab="",ylab="")
 matlines(t, fhat, lwd=2, col="blue", lty=1)
