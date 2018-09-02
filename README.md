@@ -59,6 +59,8 @@ matlines(-rep(lambda,n), lwd=2,col="red",lty=1)
 plot(Ywd, ylim=c(-20,20), xlab="", ylab="")
 ```
 
+![](inst/doc/readme_img/NMR-1.png)
+
 See the [package vignette](http://fnavarro.perso.math.cnrs.fr/rpackage/rwaveletvignette.html) for more details. You could also build and see the vignette associated with the package using the following lines of code
 
 ``` r

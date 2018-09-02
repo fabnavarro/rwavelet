@@ -7,7 +7,8 @@ output:
 library(rwavelet)
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "inst/doc/readme_img/"
 )
 ```
 # rwavelet
@@ -33,7 +34,7 @@ library(rwavelet)
 ## Getting started
 
 Denoising of an experimental nuclear magnetic resonance (NMR) spectrum
-```{r, eval=FALSE}
+```{r NMR, fig.width=8, fig.height=4}
 data("RaphNMR")
 j0 <- 0
 Y <- RaphNMR
