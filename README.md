@@ -49,7 +49,7 @@ Ywd[(2^(j0)+1):n] <- HardThresh(Ywd[(2^(j0)+1):n],lambda)
 fhat <- IWT_PO(Ywd, j0, qmf)
 
 par(mfrow=c(2,2), mgp = c(1.2, 0.5, 0), tcl = -0.2,
-    mar = .1 + c(1,1,1,1), oma = c(0,0,0,0))
+    mar = .1 + c(2,2,1,1), oma = c(0,0,0,0))
 plot(t,Y,xlab="",ylab="")
 plot(t,Y,xlab="",ylab="")
 matlines(t, fhat, lwd=2, col="blue", lty=1)
