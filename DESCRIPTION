@@ -5,7 +5,7 @@ Version: 0.1.0
 Date: 2018-03-03
 Author: F. Navarro and C. Chesneau
 Maintainer: Navarro Fabien <fabien.navarro@ensai.fr>
-Description: This package carries out wavelet analysis (orthogonal and translation invariant transforms). Most of the code is a translation of MATLAB Wavelab Toolbox written by D. Donoho, A. Maleki and M. Shahram (https://statweb.stanford.edu/~wavelab/).
+Description: Wavelet analysis (orthogonal and translation invariant transforms). Most of the code is a translation of MATLAB Wavelab Toolbox written by D. Donoho, A. Maleki and M. Shahram (<https://statweb.stanford.edu/~wavelab/>).
 URL: http://github.com/fabnavarro/rwavelet
 BugReports: http://github.com/fabnavarro/rwavelet/issues
 License: LGPL (>= 2)
