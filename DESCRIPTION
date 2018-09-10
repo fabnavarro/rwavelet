@@ -1,6 +1,6 @@
 Package: rwavelet
 Type: Package
-Title: Wavelet analysis in R
+Title: Wavelet Analysis in R
 Version: 0.1.0
 Date: 2018-03-03
 Author: F. Navarro and C. Chesneau
