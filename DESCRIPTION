@@ -1,7 +1,7 @@
 Package: rwavelet
 Type: Package
 Title: Wavelet Analysis
-Version: 0.1.1
+Version: 0.1.0
 Date: 2018-09-11
 Author: F. Navarro and C. Chesneau
 Maintainer: Navarro Fabien <fabien.navarro@ensai.fr>
