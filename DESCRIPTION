@@ -1,11 +1,11 @@
 Package: rwavelet
 Type: Package
-Title: Wavelet Analysis in R
-Version: 0.1.0
-Date: 2018-03-03
+Title: Wavelet Analysis
+Version: 0.1.1
+Date: 2018-09-11
 Author: F. Navarro and C. Chesneau
 Maintainer: Navarro Fabien <fabien.navarro@ensai.fr>
-Description: Wavelet analysis (orthogonal and translation invariant transforms). Most of the code is a translation of MATLAB Wavelab Toolbox written by D. Donoho, A. Maleki and M. Shahram (<https://statweb.stanford.edu/~wavelab/>).
+Description: Perform wavelet analysis (orthogonal and translation invariant transforms) with applications to data compression or denoising. Most of the code is a port of 'MATLAB' Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram (<https://statweb.stanford.edu/~wavelab/>).
 URL: http://github.com/fabnavarro/rwavelet
 BugReports: http://github.com/fabnavarro/rwavelet/issues
 License: LGPL (>= 2)
