@@ -1,7 +1,7 @@
 rwavelet
 ========
 
-[![Build Status](https://travis-ci.org/fabnavarro/rwavelet.svg)](https://travis-ci.org/fabnavarro/rwavelet)
+[![Build Status](https://travis-ci.org/fabnavarro/rwavelet.svg)](https://travis-ci.org/fabnavarro/rwavelet) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rwavelet)](http://cran.r-project.org/package=rwavelet)
 
 Wavelet Analysis
 
