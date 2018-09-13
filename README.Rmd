@@ -15,7 +15,6 @@ knitr::opts_chunk$set(
 
 [![Build Status](https://travis-ci.org/fabnavarro/rwavelet.svg)](https://travis-ci.org/fabnavarro/rwavelet)
 
-
 Wavelet Analysis
 
 ## Download and Install
@@ -25,10 +24,15 @@ Install the devtools package if you haven't already.
 install.packages("devtools")
 ```
 
-To install the package, type the following at the R command line:
+To install the development package, type the following at the R command line:
 ```{r, eval=FALSE}
 devtools::install_github("fabnavarro/rwavelet")
 library(rwavelet)
+```
+
+To install the CRAN version of the package, type the following:
+```{r, eval=FALSE}
+install.packages("rwavelet")
 ```
 
 ## Getting started

@@ -14,11 +14,17 @@ Install the devtools package if you haven't already.
 install.packages("devtools")
 ```
 
-To install the package, type the following at the R command line:
+To install the development package, type the following at the R command line:
 
 ``` r
 devtools::install_github("fabnavarro/rwavelet")
 library(rwavelet)
+```
+
+To install the CRAN version of the package, type the following:
+
+``` r
+install.packages("rwavelet")
 ```
 
 Getting started
@@ -33,7 +39,7 @@ n <- length(Y)
 t <- seq(0, 1, length = n)
 ```
 
-Then we specify the coarse decomposition scale *j*<sub>0</sub>, the wavelets we want to use (here, Symmlet with 6 null moments) and we perform a fast wavelet transform to get the noisy wavelet coefficients (Ywd):
+Then we specify the coarse decomposition scale *j*<sub>0</sub>, the wavelets we want to use (here, Symmlet with 6 vanishing moments) and we perform a fast wavelet transform to get the noisy wavelet coefficients (Ywd):
 
 ``` r
 j0 <- 0
@@ -43,7 +49,7 @@ Ywd <- FWT_PO(Y, j0, qmf)
 Ywnoise <- Ywd
 ```
 
-We estimate the standard deviation *σ* of the noise using the maximum absolute deviation (with only the finest scale coefficients). We apply a hard thresholding rule (with a universal threshold) to the coefficient estimators and obtain the estimator by applying an inverse transform:
+We estimate *σ* the standard deviation of the noise using the maximum absolute deviation (with only the finest scale coefficients). We apply a hard thresholding rule (with a universal threshold) to the coefficient estimators and obtain the estimator by applying an inverse transform:
 
 ``` r
 hatsigma <- MAD(Ywd[(2^(J-1)+1):2^J])
