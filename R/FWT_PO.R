@@ -29,4 +29,3 @@ FWT_PO <- function(x, L, qmf) {
   wcoef[1:(2^L)] <- beta
   return(wcoef)
 }
-# a modifier apres la creation de ShapeLike
