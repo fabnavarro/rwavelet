@@ -1,6 +1,5 @@
 #' Translation Invariant Iorward Wavelet Transform.
 #'
-#'
 #' @export IWT_TI
 #' @param pkt translation-invariant wavelet transform table (TIWT).
 #' @param qmf orthonormal quadrature mirror filter.
