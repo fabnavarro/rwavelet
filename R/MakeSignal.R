@@ -32,7 +32,7 @@ MakeSignal <- function(name, n) {
   if (name == "Bumps") {
     pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.4, 0.44, 0.65, 0.76, 0.78, 0.81)
     hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)
-    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008,
+    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008, 
       0.005)
     sig <- 2 * rep(0, length(t))
     for (j in 1:length(pos)) {
@@ -99,7 +99,7 @@ MakeSignal <- function(name, n) {
     sig <- sig + sin(pi * t * (n * t))
     pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.4, 0.44, 0.65, 0.76, 0.78, 0.81)
     hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)
-    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008,
+    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008, 
       0.005)
     for (j in 1:length(pos)) {
       sig <- sig + hgt[j]/(1 + abs((t - pos[j])/wth[j]))^4
@@ -159,7 +159,7 @@ MakeSignal <- function(name, n) {
     f4 <- g[i2] * cos(350 * pi * j * n/1024)
     sig <- f1 + f2 + f3 + f4
     enveloppe <- rep(1, n)  # the rising cutoff function
-    enveloppe[1:(n/8)] <- (1 + sin(-pi/2 + ((1:(n/8)) - rep(1, n/8))/(n/8 -
+    enveloppe[1:(n/8)] <- (1 + sin(-pi/2 + ((1:(n/8)) - rep(1, n/8))/(n/8 - 
       1) * pi))/2
     enveloppe[(7 * n/8 + 1):n] <- rev(enveloppe[1:(n/8)])
     sig <- sig * enveloppe
@@ -172,8 +172,8 @@ MakeSignal <- function(name, n) {
     g <- exp(-t^2 * 20)
     i1 <- ((2 * N/4 + 1):(2 * N/4 + N))
     i2 <- ((N/4 + 1):(N/4 + N))
-    sig1 <- 3 * g[i1] * exp((0 + (0+1i)) * N/16 * pi * j)
-    sig2 <- 3 * g[i2] * exp((0 + (0+1i)) * N/4 * pi * j)
+    sig1 <- 3 * g[i1] * exp((0 + (0 + (0+1i))) * N/16 * pi * j)
+    sig2 <- 3 * g[i2] * exp((0 + (0 + (0+1i))) * N/4 * pi * j)
     sig <- sig1 + sig2
   }
   if (name == "sineoneoverx") {
@@ -188,87 +188,95 @@ MakeSignal <- function(name, n) {
   if (name == "Cusp2") {
     N <- 64
     i1 <- (1:N)/N
-    x <- (1-sqrt(i1)) + i1/2 -.5
-    M <- 8*N
+    x <- (1 - sqrt(i1)) + i1/2 - 0.5
+    M <- 8 * N
     sig <- rep(0, M)
-    sig[(M-1.5*N+1):(M-.5*N)] <- x
-    sig[(M-2.5*N+2):(M-1.5*N+1)] <- rev(x)
-    sig[(3*N+1):(3*N + N)] <- .5*rep(1,N)
+    sig[(M - 1.5 * N + 1):(M - 0.5 * N)] <- x
+    sig[(M - 2.5 * N + 2):(M - 1.5 * N + 1)] <- rev(x)
+    sig[(3 * N + 1):(3 * N + N)] <- 0.5 * rep(1, N)
     sig
   }
   # ToDo: trad fftshift from matlab
-  #
   if (name == "SmoothCusp") {
     N <- 64
     i1 <- (1:N)/N
-    x <- (1-sqrt(i1)) + i1/2 -.5
-    M <- 8*N
+    x <- (1 - sqrt(i1)) + i1/2 - 0.5
+    M <- 8 * N
     sig <- rep(0, M)
-    sig[(M-1.5*N+1):(M-.5*N)] <- x
-    sig[(M-2.5*N+2):(M-1.5*N+1)] <- rev(x)
-    sig[(3*N+1):(3*N + N)] <- .5*rep(1,N)
+    sig[(M - 1.5 * N + 1):(M - 0.5 * N)] <- x
+    sig[(M - 2.5 * N + 2):(M - 1.5 * N + 1)] <- rev(x)
+    sig[(3 * N + 1):(3 * N + N)] <- 0.5 * rep(1, N)
     N <- 64
-    M <- 8*N
+    M <- 8 * N
     t <- (1:M)/M
     sigma <- 0.01
-    g <- exp(-.5*(abs(t-.5)/sigma)^2)/sigma/sqrt(2*pi)
-    g <- c(tail(g,ceiling(length(g)/2)),head(g,ceiling(length(g)/2)))
-    sig2 <- iconvv(g,sig)/M
+    g <- exp(-0.5 * (abs(t - 0.5)/sigma)^2)/sigma/sqrt(2 * pi)
+    g <- c(tail(g, ceiling(length(g)/2)), head(g, ceiling(length(g)/2)))
+    sig2 <- iconvv(g, sig)/M
   }
   if (name == "Piece-Regular") {
-    sig1 <- -15*MakeSignal('Bumps',n)
+    sig1 <- -15 * MakeSignal("Bumps", n)
     t <- (1:trunc(n/12))/trunc(n/12)
-    sig2 <- -exp(4*t)
+    sig2 <- -exp(4 * t)
     t <- (1:trunc(n/7))/trunc(n/7)
-    sig5 <- exp(4*t)-exp(4)
+    sig5 <- exp(4 * t) - exp(4)
     t <- (1:trunc(n/3))/trunc(n/3)
     sigma <- 6/40
-    sig6 <- -70*exp(-((t-1/2)*(t-1/2))/(2*sigma^2))
-    sig <- rep(0,n)
+    sig6 <- -70 * exp(-((t - 1/2) * (t - 1/2))/(2 * sigma^2))
+    sig <- rep(0, n)
     sig[1:trunc(n/7)] <- sig6[1:trunc(n/7)]
-    sig[(trunc(n/7)+1):trunc(n/5)] <- 0.5*sig6[(trunc(n/7)+1):trunc(n/5)]
-    sig[(trunc(n/5)+1):trunc(n/3)] <- sig6[(trunc(n/5)+1):trunc(n/3)]
-    sig[(trunc(n/3)+1):trunc(n/2)] <- sig1[(trunc(n/3)+1):trunc(n/2)]
-    sig[(trunc(n/2)+1):(trunc(n/2)+trunc(n/12))] <- sig2
-    sig[(trunc(n/2)+2*trunc(n/12)):(trunc(n/2)+trunc(n/12)+1)] <- sig2
-    ind <- trunc(n/2)+2*trunc(n/12)+3*trunc(n/20)-trunc(n/2)-2*trunc(n/12)-trunc(n/20)
-    if (ind!=0){
-    sig[(trunc(n/2)+2*trunc(n/12)+trunc(n/20)+1):(trunc(n/2)+2*trunc(n/12)+3*trunc(n/20))] <-
-      -rep(1,trunc(n/2)+2*trunc(n/12)+3*trunc(n/20)-trunc(n/2)-2*trunc(n/12)-trunc(n/20))*25
+    sig[(trunc(n/7) + 1):trunc(n/5)] <- 0.5 * sig6[(trunc(n/7) + 1):trunc(n/5)]
+    sig[(trunc(n/5) + 1):trunc(n/3)] <- sig6[(trunc(n/5) + 1):trunc(n/3)]
+    sig[(trunc(n/3) + 1):trunc(n/2)] <- sig1[(trunc(n/3) + 1):trunc(n/2)]
+    sig[(trunc(n/2) + 1):(trunc(n/2) + trunc(n/12))] <- sig2
+    sig[(trunc(n/2) + 2 * trunc(n/12)):(trunc(n/2) + trunc(n/12) + 1)] <- sig2
+    ind <- trunc(n/2) + 2 * trunc(n/12) + 3 * trunc(n/20) - trunc(n/2) - 
+      2 * trunc(n/12) - trunc(n/20)
+    if (ind != 0) {
+      sig[(trunc(n/2) + 2 * trunc(n/12) + trunc(n/20) + 1):(trunc(n/2) + 
+        2 * trunc(n/12) + 3 * trunc(n/20))] <- -rep(1, trunc(n/2) + 2 * 
+        trunc(n/12) + 3 * trunc(n/20) - trunc(n/2) - 2 * trunc(n/12) - 
+        trunc(n/20)) * 25
     }
-    k <- trunc(n/2) + 2*trunc(n/12)+3*trunc(n/20)
-    sig[(k+1):(k+trunc(n/7))] <- sig5
-    diff <- n-5*trunc(n/5)
-    if (diff!=0){sig[(5*trunc(n/5)+1):n] <- sig[rev(seq_len(diff))]}
+    k <- trunc(n/2) + 2 * trunc(n/12) + 3 * trunc(n/20)
+    sig[(k + 1):(k + trunc(n/7))] <- sig5
+    diff <- n - 5 * trunc(n/5)
+    if (diff != 0) {
+      sig[(5 * trunc(n/5) + 1):n] <- sig[rev(seq_len(diff))]
+    }
     # zero-mean
     bias <- sum(sig)/n
-    sig <- bias-sig
+    sig <- bias - sig
   }
   if (name == "Piece-Polynomial") {
     t <- (1:trunc(n/5))/trunc(n/5)
-    sig1 <- 20*(t^3+t^2+4)
-    sig3 <- 40*(2*t^3+t) + 100
-    sig2 <- 10*t^3 + 45
-    sig4 <- 16*t^2+8*t+16
-    sig5 <- 20*(t+4);
-    sig6[1:trunc(n/10)] <- rep(1,trunc(n/10))
-    sig6 <- sig6*20
-    sig <- rep(0,n)
+    sig1 <- 20 * (t^3 + t^2 + 4)
+    sig3 <- 40 * (2 * t^3 + t) + 100
+    sig2 <- 10 * t^3 + 45
+    sig4 <- 16 * t^2 + 8 * t + 16
+    sig5 <- 20 * (t + 4)
+    sig6[1:trunc(n/10)] <- rep(1, trunc(n/10))
+    sig6 <- sig6 * 20
+    sig <- rep(0, n)
     sig[1:trunc(n/5)] <- sig1
-    sig[(2*trunc(n/5)):(trunc(n/5)+1)] <- sig2
-    sig[(2*trunc(n/5)+1):(3*trunc(n/5))] <- sig3
-    sig[(3*trunc(n/5)+1):(4*trunc(n/5))]  <- sig4
-    sig[(4*trunc(n/5)+1):(5*trunc(n/5))] <- sig5[trunc(n/5):1]
-    diff <- n-5*trunc(n/5)
-    if (diff!=0){sig[(5*trunc(n/5)+1):n] <- sig[diff:1]}
-    sig[(trunc(n/20)+1):(trunc(n/20)+trunc(n/10))] <- rep(1,trunc(n/10))*10
-    if (trunc(n/20)!=0){
-    sig[(n-trunc(n/10)+1):(n+trunc(n/20)-trunc(n/10))] <- rep(1,trunc(n/20))*150}
+    sig[(2 * trunc(n/5)):(trunc(n/5) + 1)] <- sig2
+    sig[(2 * trunc(n/5) + 1):(3 * trunc(n/5))] <- sig3
+    sig[(3 * trunc(n/5) + 1):(4 * trunc(n/5))] <- sig4
+    sig[(4 * trunc(n/5) + 1):(5 * trunc(n/5))] <- sig5[trunc(n/5):1]
+    diff <- n - 5 * trunc(n/5)
+    if (diff != 0) {
+      sig[(5 * trunc(n/5) + 1):n] <- sig[diff:1]
+    }
+    sig[(trunc(n/20) + 1):(trunc(n/20) + trunc(n/10))] <- rep(1, trunc(n/10)) * 
+      10
+    if (trunc(n/20) != 0) {
+      sig[(n - trunc(n/10) + 1):(n + trunc(n/20) - trunc(n/10))] <- rep(1, 
+        trunc(n/20)) * 150
+    }
     # zero-mean
     bias <- sum(sig)/n
-    sig <- sig-bias
-  }
-  else {
+    sig <- sig - bias
+  } else {
     print("Allowable Names are:")
     print("HeaviSine")
     print("Bumps")
