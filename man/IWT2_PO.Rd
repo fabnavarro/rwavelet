@@ -22,9 +22,11 @@ then \code{x <- IWT2_PO(wc,L,qmf)} reconstructs \code{x} exactly
 \code{qmf} is a nice qmf, e.g. one made by \code{\link{MakeONFilter}}.
 }
 \examples{
-\dontrun{
-x <- IWT2_PO(wc,L,qmf)
-}
+qmf <- MakeONFilter('Daubechies', 10)
+L <- 3
+x <- matrix(rnorm(128^2),ncol=128)
+wc <- FWT2_PO(x, L, qmf)
+xr <- IWT2_PO(wc,L,qmf)
 }
 \seealso{
 \code{\link{FWT2_PO}}, \code{\link{MakeONFilter}}.
