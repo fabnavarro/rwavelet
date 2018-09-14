@@ -22,9 +22,10 @@ A two-dimensional Wavelet Transform is computed for the array x.
 To reconstruct, use  \code{\link{IWT2_PO}}.
 }
 \examples{
-\dontrun{
-wc <- FWT2_PO(x,L,qmf)
-}
+qmf <- MakeONFilter('Daubechies', 10)
+L <- 3
+x <- matrix(rnorm(128^2),ncol=128)
+wc <- FWT2_PO(x, L, qmf)
 }
 \seealso{
 \code{\link{IWT2_PO}}, \code{\link{MakeONFilter}}.

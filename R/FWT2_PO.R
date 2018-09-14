@@ -10,9 +10,10 @@
 #' @param qmf quadrature mirror filter.
 #' @return \code{wc} 2-d wavelet transform.
 #' @examples
-#' \dontrun{
-#' wc <- FWT2_PO(x,L,qmf)
-#' }
+#' qmf <- MakeONFilter('Daubechies', 10)
+#' L <- 3
+#' x <- matrix(rnorm(128^2),ncol=128)
+#' wc <- FWT2_PO(x, L, qmf)
 #' @seealso \code{\link{IWT2_PO}}, \code{\link{MakeONFilter}}.
 
 FWT2_PO <- function(x, L, qmf) {
