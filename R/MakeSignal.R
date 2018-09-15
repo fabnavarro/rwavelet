@@ -172,8 +172,8 @@ MakeSignal <- function(name, n) {
     g <- exp(-t^2 * 20)
     i1 <- ((2 * N/4 + 1):(2 * N/4 + N))
     i2 <- ((N/4 + 1):(N/4 + N))
-    sig1 <- 3 * g[i1] * exp((0 + (0 + (0+1i))) * N/16 * pi * j)
-    sig2 <- 3 * g[i2] * exp((0 + (0 + (0+1i))) * N/4 * pi * j)
+    sig1 <- 3 * g[i1] * exp((0 + (0 + (0 + (0+1i)))) * N/16 * pi * j)
+    sig2 <- 3 * g[i2] * exp((0 + (0 + (0 + (0+1i)))) * N/4 * pi * j)
     sig <- sig1 + sig2
   }
   if (name == "sineoneoverx") {
