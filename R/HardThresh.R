@@ -5,9 +5,13 @@
 #' @param t Threshold.
 #' @return \code{x} filtered result (y 1_{|y|>t}).
 #' @examples
-#' \dontrun{
-#' HardThresh(y,t)
-#' }
+#' f <- MakeSignal('HeaviSine',2^3)
+#' qmf <- MakeONFilter('Daubechies', 10)
+#' L <- 0
+#' wc <- FWT_PO(f, L, qmf)
+#' thr <- 2
+#' wct <- HardThresh(wc, thr)
+#' fapprox <- IWT_PO(wct, L, qmf)
 
 HardThresh <- function(y, t) {
   x <- y * (abs(y) > t)
