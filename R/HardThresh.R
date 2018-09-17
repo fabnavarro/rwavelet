@@ -11,7 +11,7 @@
 #' wc <- FWT_PO(f, L, qmf)
 #' thr <- 2
 #' wct <- HardThresh(wc, thr)
-#' fapprox <- IWT_PO(wct, L, qmf)
+#' fhard <- IWT_PO(wct, L, qmf)
 
 HardThresh <- function(y, t) {
   x <- y * (abs(y) > t)
