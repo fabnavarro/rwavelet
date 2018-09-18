@@ -18,7 +18,11 @@ HardThresh(y, t)
 Apply Hard Threshold.
 }
 \examples{
-\dontrun{
-HardThresh(y,t)
-}
+f <- MakeSignal('HeaviSine',2^3)
+qmf <- MakeONFilter('Daubechies', 10)
+L <- 0
+wc <- FWT_PO(f, L, qmf)
+thr <- 2
+wct <- HardThresh(wc, thr)
+fhard <- IWT_PO(wct, L, qmf)
 }
