@@ -213,6 +213,7 @@ MakeONFilter <- function(Type, Par) {
     f[l:(2 * l - 1)] <- g
     f[1:l - 1] <- rev(g[2:l])
   }
-  f <- f/normvec(f)
+  #f <- f/normvec(f)
+  f <- f/norm(as.matrix(f),"F")
   f
 }
