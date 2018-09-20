@@ -6,9 +6,7 @@
 #' @param n length of signal
 #' @return \code{p} linear indices of all coeff's in that block.
 #' @examples
-#' \dontrun{
-#' packet(d, b, n)
-#' }
+#' packet(1, 1, 8)
 
 packet <- function(d, b, n) {
   npack <- 2^d
