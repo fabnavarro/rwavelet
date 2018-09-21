@@ -19,7 +19,7 @@ FWT2_PO(x, L, qmf)
 \description{
 A two-dimensional Wavelet Transform is computed for the array x.
 \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
-To reconstruct, use  \code{\link{IWT2_PO}}.
+To reconstruct, use \code{\link{IWT2_PO}}.
 }
 \examples{
 qmf <- MakeONFilter('Daubechies', 10)
