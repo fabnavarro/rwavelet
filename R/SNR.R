@@ -2,7 +2,7 @@
 #'
 #' @export SNR
 #' @param x Original reference signal.
-#' @param y Restored or noisy signal
+#' @param y Restored or noisy signal.
 #' @return Signal/Noise ratio.
 #' @examples
 #' n <- 2^4

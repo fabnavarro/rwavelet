@@ -9,7 +9,7 @@ SNR(x, y)
 \arguments{
 \item{x}{Original reference signal.}
 
-\item{y}{Restored or noisy signal}
+\item{y}{Restored or noisy signal.}
 }
 \value{
 Signal/Noise ratio.
