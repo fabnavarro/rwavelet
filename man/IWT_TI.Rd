@@ -2,7 +2,7 @@
 % Please edit documentation in R/IWT_TI.R
 \name{IWT_TI}
 \alias{IWT_TI}
-\title{Translation Invariant Iorward Wavelet Transform.}
+\title{Invert translation invariant wavelet transform.}
 \usage{
 IWT_TI(pkt, qmf)
 }
@@ -15,7 +15,7 @@ IWT_TI(pkt, qmf)
 \code{x} 1-d signal reconstructed from translation-invariant transform TIWT.
 }
 \description{
-Translation Invariant Iorward Wavelet Transform.
+Invert translation invariant wavelet transform.
 }
 \examples{
 x <- MakeSignal('Ramp', 8)
