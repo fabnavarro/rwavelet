@@ -2,7 +2,7 @@
 #'
 #' A two-dimensional Wavelet Transform is computed for the array x.
 #' \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
-#' To reconstruct, use  \code{\link{IWT2_PO}}.
+#' To reconstruct, use \code{\link{IWT2_PO}}.
 #'
 #' @export FWT2_PO
 #' @param x 2-d image (n by n array, n dyadic).
