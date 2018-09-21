@@ -18,7 +18,7 @@ SoftThresh(y, t)
 Apply Soft Threshold.
 }
 \examples{
-f <- MakeSignal('HeaviSine',2^3)
+f <- MakeSignal('HeaviSine', 2^3)
 qmf <- MakeONFilter('Daubechies', 10)
 L <- 0
 wc <- FWT_PO(f, L, qmf)

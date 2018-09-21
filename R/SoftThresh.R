@@ -5,7 +5,7 @@
 #' @param t Threshold.
 #' @return \code{x} filtered result (y 1_{|y|>t}).
 #' @examples
-#' f <- MakeSignal('HeaviSine',2^3)
+#' f <- MakeSignal('HeaviSine', 2^3)
 #' qmf <- MakeONFilter('Daubechies', 10)
 #' L <- 0
 #' wc <- FWT_PO(f, L, qmf)
