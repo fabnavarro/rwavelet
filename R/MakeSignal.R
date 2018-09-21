@@ -9,8 +9,7 @@
 #'             'Leopold' (Kronecker), 'Riemann', 'HypChirps',
 #'             'LinChirps', 'Chirps', 'Gabor', 'sineoneoverx',
 #'             'Cusp2', 'SmoothCusp', 'Piece-Regular' (Piece-Wise Smooth),
-#'             'Piece-Polynomial' (Piece-Wise 3rd degree polynomial),
-#'
+#'             'Piece-Polynomial' (Piece-Wise 3rd degree polynomial).
 #' @param n desired signal length
 #' @return \code{sig} 1-d signal.
 #' @examples

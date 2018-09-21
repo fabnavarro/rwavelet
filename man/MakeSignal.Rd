@@ -14,7 +14,7 @@ MakeSignal(name, n)
 'Leopold' (Kronecker), 'Riemann', 'HypChirps',
 'LinChirps', 'Chirps', 'Gabor', 'sineoneoverx',
 'Cusp2', 'SmoothCusp', 'Piece-Regular' (Piece-Wise Smooth),
-'Piece-Polynomial' (Piece-Wise 3rd degree polynomial),}
+'Piece-Polynomial' (Piece-Wise 3rd degree polynomial).}
 
 \item{n}{desired signal length}
 }
