@@ -22,5 +22,4 @@ PlotSpikes <- function(base, t, x, L, J) {
   v <- cbind(base, as.vector(xx), base)
   return(plot(u, v, type = "l", xlim = c(0, 1), ylim = c(-J, -L + 1), axes = FALSE,
     xlab = "", ylab = ""))
-
 }
