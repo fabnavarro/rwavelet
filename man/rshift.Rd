@@ -16,6 +16,6 @@ rshift(a)
 Circular right shift of 1-d signal
 }
 \examples{
-x <- MakeSignal('HeaviSine',2^3)
+x <- MakeSignal('HeaviSine', 2^3)
 rshift(x)
 }
