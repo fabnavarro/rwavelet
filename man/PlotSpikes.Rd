@@ -25,7 +25,7 @@ Plot 1-d signal as baseline with series of spikes.
 }
 \examples{
 \dontrun{
-PlotSpikes(base,t,x, L, J)
+PlotSpikes(base, t, x, L, J)
 }
 }
 \seealso{
