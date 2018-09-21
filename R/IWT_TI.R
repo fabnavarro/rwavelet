@@ -1,4 +1,4 @@
-#' Translation Invariant Iorward Wavelet Transform.
+#' Invert translation invariant wavelet transform.
 #'
 #' @export IWT_TI
 #' @param pkt translation-invariant wavelet transform table (TIWT).
