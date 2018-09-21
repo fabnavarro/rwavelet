@@ -1,6 +1,5 @@
 #'  Plot 1-d signal as baseline with series of spikes.
 #'
-#' @export PlotSpikes
 #' @param base number, baseline level.
 #' @param t ordinate values.
 #' @param x 1-d signal, specifies spike deflections from baseline.
