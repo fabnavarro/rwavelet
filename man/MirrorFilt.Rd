@@ -10,7 +10,7 @@ MirrorFilt(x)
 \item{x}{1-d signal.}
 }
 \value{
-\code{h} 1-d signal with DC frequency content shifted.
+\code{h} 1-d signal with DC frequency content shifted
                  to Nyquist frequency
 }
 \description{

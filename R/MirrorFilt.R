@@ -4,7 +4,7 @@
 #'
 #' @export MirrorFilt
 #' @param x  1-d signal.
-#' @return \code{h} 1-d signal with DC frequency content shifted.
+#' @return \code{h} 1-d signal with DC frequency content shifted
 #'                  to Nyquist frequency
 #' @examples
 #' x <- MakeSignal('HeaviSine',2^3)
@@ -13,4 +13,6 @@
 
 MirrorFilt <- function(x) {
   return(-((-1)^(1:length(x)) * x))
+  #TODO check Brani Vidakovic correction
+  #return(-rev((-1)^(1:length(x)) * x))
 }
