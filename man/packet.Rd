@@ -20,7 +20,5 @@ packet(d, b, n)
 Packet table indexing.
 }
 \examples{
-\dontrun{
-packet(d, b, n)
-}
+packet(1, 1, 8)
 }
