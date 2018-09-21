@@ -1,6 +1,5 @@
 #' Hi-Pass Upsampling operator; periodized
 #'
-#'
 #' @export UpDyadHi
 #' @param x 1-d signal at coarser scale.
 #' @param qmf filter.
