@@ -3,7 +3,7 @@
 #' h(t) = (-1)^(t-1)  * x(t),  1 <= t <= length(x)
 #'
 #' @export quadlength
-#' @param x  2-d image; size(n,n), n = 2^J (hopefully).
+#' @param x  2-d image; dim(n,n), n = 2^J (hopefully).
 #' @return \code{n} length(x).
 #' @return \code{J} least power of two greater than n.
 #' @examples
