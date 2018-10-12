@@ -7,7 +7,7 @@
 quadlength(x)
 }
 \arguments{
-\item{x}{2-d image; size(n,n), n = 2^J (hopefully).}
+\item{x}{2-d image; dim(n,n), n = 2^J (hopefully).}
 }
 \value{
 \code{n} length(x).
