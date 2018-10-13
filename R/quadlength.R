@@ -22,7 +22,7 @@ quadlength <- function(x) {
     J <- J + 1
   }
   if (k != n) {
-    warning("n != 2^J: n should be a Dyadic number")
+    warning("n != 2^J: n should be a dyadic number")
   }
   return(list(x = n, y = J))
 }
