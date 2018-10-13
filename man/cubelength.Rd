@@ -15,7 +15,8 @@ cubelength(x)
 \code{J} least power of two greater than n.
 }
 \description{
-Find length and dyadic length of square array.
+3-D counterpart of Donoho's quadlength utilized by the 2D pair.
+original matlab code Vicki Yang and Brani Vidakovic.
 }
 \examples{
 cubelength(array(1:3, c(2,2,2)))
