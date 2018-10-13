@@ -28,9 +28,9 @@ Vicki Yang and Brani Vidakovic.
 \examples{
 qmf <- MakeONFilter('Daubechies', 10)
 L <- 3
-x <- array(rnorm(64^3), c(64,64,64))
+x <- array(rnorm(32^3), c(32,32,32))
 wc <- FWT3_PO(x, L, qmf)
 }
 \seealso{
-\code{\link{IWT3_PO}}, \code{\link{MakeONFilter}}.
+\code{\link{MakeONFilter}}.
 }
