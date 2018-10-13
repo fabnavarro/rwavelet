@@ -1,5 +1,8 @@
 #' Find length and dyadic length of square array.
 #'
+#' 3-D counterpart of Donoho's quadlength utilized by the 2D pair.
+#' original matlab code Vicki Yang and Brani Vidakovic.
+#'
 #' @export cubelength
 #' @param x  3-d array; dim(n,n,n), n = 2^J (hopefully).
 #' @return \code{n} length(x).
