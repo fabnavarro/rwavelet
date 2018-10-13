@@ -2,6 +2,7 @@
 #'
 #' A three-dimensional Wavelet Transform is computed for the array x.
 #' \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
+#' To reconstruct, use \code{\link{IWT3_PO}}.
 #'
 #' 3-D counterpart of Donoho's FWT2_PO, original matlab code
 #' Vicki Yang and Brani Vidakovic.
@@ -16,7 +17,7 @@
 #' L <- 3
 #' x <- array(rnorm(32^3), c(32,32,32))
 #' wc <- FWT3_PO(x, L, qmf)
-#' @seealso \code{\link{MakeONFilter}}.
+#' @seealso \code{\link{IWT3_PO}}, \code{\link{MakeONFilter}}.
 
 FWT3_PO <- function(x, L, qmf) {
   c <- cubelength(x)
