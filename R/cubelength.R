@@ -14,7 +14,7 @@ cubelength <- function(x) {
   s <- dim(x)
   n <- s[1]
   if (s[2] != s[1] | s[2] != s[3]) {
-    print("Warning nr!=nc or nr!=np")
+    warning("nr!=nc or nr!=np")
   }
   k <- 1
   J <- 0
@@ -23,7 +23,7 @@ cubelength <- function(x) {
     J <- J + 1
   }
   if (k != n) {
-    print("Warning n!=2^J")
+    warning("n!=2^J: n should be a dyadic number")
   }
   return(list(x = n, y = J))
 }
