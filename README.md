@@ -27,7 +27,7 @@ To install the CRAN version of the package, type the following:
 install.packages("rwavelet")
 ```
 
-Getting started
+Getting Started
 ---------------
 
 Here is an example of denoising of an experimental nuclear magnetic resonance (NMR) spectrum. We start by loading the data:
