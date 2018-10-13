@@ -13,7 +13,7 @@ quadlength <- function(x) {
   s <- dim(x)
   n <- s[1]
   if (s[2] != s[1]) {
-    print("Warning in quadlength : nr != nc")
+    warning("nr != nc")
   }
   k <- 1
   J <- 0
@@ -22,7 +22,7 @@ quadlength <- function(x) {
     J <- J + 1
   }
   if (k != n) {
-    print("Warning in quadlength : n != 2^J")
+    warning("n != 2^J: n should be a Dyadic number")
   }
   return(list(x = n, y = J))
 }
