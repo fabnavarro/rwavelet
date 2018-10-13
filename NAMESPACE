@@ -3,6 +3,7 @@
 export(DownDyadHi)
 export(DownDyadLo)
 export(FWT2_PO)
+export(FWT3_PO)
 export(FWT_PO)
 export(FWT_TI)
 export(GWN)
