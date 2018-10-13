@@ -17,7 +17,7 @@
 #' L <- 3
 #' x <- array(rnorm(32^3), c(32,32,32))
 #' wc <- FWT3_PO(x, L, qmf)
-#' @seealso \code{\link{IWT3_PO}}, \code{\link{MakeONFilter}}.
+#' @seealso \code{\link{MakeONFilter}}.
 
 FWT3_PO <- function(x, L, qmf) {
   c <- cubelength(x)
