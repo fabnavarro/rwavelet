@@ -1,0 +1,17 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+```{r Setup, include=FALSE}
+library(rwavelet)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+rwavelet News
+
+# rwavelet 0.2.0. Minor release
+* Added 3-d Discrete Wavelet Transformation (FWT3_PO, IWT3_PO)
