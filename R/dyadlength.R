@@ -17,7 +17,7 @@ dyadlength <- function(x) {
   }
   J <- ceiling(log(n)/log(2))
   if (2^J != n) {
-    print("Warning in dyadlength: n != 2^J")
+    warning("n != 2^J")
   }
   return(list(x = n, y = J))
 }
