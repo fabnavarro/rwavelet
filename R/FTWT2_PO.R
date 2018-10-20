@@ -20,16 +20,18 @@ FTWT2_PO <- function(x, L, qmf) {
   q <- quadlength(x)
   n <- q$x
   J <- q$y
-  for (r in 1:n) {
-    row <- x[r, ]
-    wrow <- FWT_PO(row, L, qmf)
-    x[r, ] <- wrow
-  }
-  for (c in 1:n) {
-    col <- x[, c]
-    wcol <- FWT_PO(col, L, qmf)
-    x[, c] <- wcol
-  }
-  wc <- x
+  # for (r in 1:n) {
+  #   row <- x[r, ]
+  #   wrow <- FWT_PO(row, L, qmf)
+  #   x[r, ] <- wrow
+  # }
+  # for (c in 1:n) {
+  #   col <- x[, c]
+  #   wcol <- FWT_PO(col, L, qmf)
+  #   x[, c] <- wcol
+  # }
+  # wc <- x
+  x <- t(apply(x, 1, FUN=FWT_PO, L=L, qmf=qmf))
+  wc <-  apply(x, 2, FUN=FWT_PO, L=L, qmf=qmf)
   return(wc)
 }
