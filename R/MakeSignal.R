@@ -29,7 +29,7 @@ MakeSignal <- function(name, n) {
   if (name == "Bumps") {
     pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.4, 0.44, 0.65, 0.76, 0.78, 0.81)
     hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)
-    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008,
+    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008, 
       0.005)
     sig <- 2 * rep(0, length(t))
     for (j in 1:length(pos)) {
@@ -96,7 +96,7 @@ MakeSignal <- function(name, n) {
     sig <- sig + sin(pi * t * (n * t))
     pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.4, 0.44, 0.65, 0.76, 0.78, 0.81)
     hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)
-    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008,
+    wth <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008, 
       0.005)
     for (j in 1:length(pos)) {
       sig <- sig + hgt[j]/(1 + abs((t - pos[j])/wth[j]))^4
@@ -156,7 +156,7 @@ MakeSignal <- function(name, n) {
     f4 <- g[i2] * cos(350 * pi * j * n/1024)
     sig <- f1 + f2 + f3 + f4
     enveloppe <- rep(1, n)  # the rising cutoff function
-    enveloppe[1:(n/8)] <- (1 + sin(-pi/2 + ((1:(n/8)) - rep(1, n/8))/(n/8 -
+    enveloppe[1:(n/8)] <- (1 + sin(-pi/2 + ((1:(n/8)) - rep(1, n/8))/(n/8 - 
       1) * pi))/2
     enveloppe[(7 * n/8 + 1):n] <- rev(enveloppe[1:(n/8)])
     sig <- sig * enveloppe
@@ -169,8 +169,8 @@ MakeSignal <- function(name, n) {
     g <- exp(-t^2 * 20)
     i1 <- ((2 * N/4 + 1):(2 * N/4 + N))
     i2 <- ((N/4 + 1):(N/4 + N))
-    sig1 <- 3 * g[i1] * exp((0+1i) * N/16 * pi * j)
-    sig2 <- 3 * g[i2] * exp((0+1i) * N/4 * pi * j)
+    sig1 <- 3 * g[i1] * exp((0 + (0+1i)) * N/16 * pi * j)
+    sig2 <- 3 * g[i2] * exp((0 + (0+1i)) * N/4 * pi * j)
     sig <- sig1 + sig2
   }
   if (name == "sineoneoverx") {
@@ -227,12 +227,12 @@ MakeSignal <- function(name, n) {
     sig[(trunc(n/3) + 1):trunc(n/2)] <- sig1[(trunc(n/3) + 1):trunc(n/2)]
     sig[(trunc(n/2) + 1):(trunc(n/2) + trunc(n/12))] <- sig2
     sig[(trunc(n/2) + 2 * trunc(n/12)):(trunc(n/2) + trunc(n/12) + 1)] <- sig2
-    ind <- trunc(n/2) + 2 * trunc(n/12) + 3 * trunc(n/20) - trunc(n/2) -
+    ind <- trunc(n/2) + 2 * trunc(n/12) + 3 * trunc(n/20) - trunc(n/2) - 
       2 * trunc(n/12) - trunc(n/20)
     if (ind != 0) {
-      sig[(trunc(n/2) + 2 * trunc(n/12) + trunc(n/20) + 1):(trunc(n/2) +
-        2 * trunc(n/12) + 3 * trunc(n/20))] <- -rep(1, trunc(n/2) + 2 *
-        trunc(n/12) + 3 * trunc(n/20) - trunc(n/2) - 2 * trunc(n/12) -
+      sig[(trunc(n/2) + 2 * trunc(n/12) + trunc(n/20) + 1):(trunc(n/2) + 
+        2 * trunc(n/12) + 3 * trunc(n/20))] <- -rep(1, trunc(n/2) + 2 * 
+        trunc(n/12) + 3 * trunc(n/20) - trunc(n/2) - 2 * trunc(n/12) - 
         trunc(n/20)) * 25
     }
     k <- trunc(n/2) + 2 * trunc(n/12) + 3 * trunc(n/20)
@@ -264,10 +264,10 @@ MakeSignal <- function(name, n) {
     if (diff != 0) {
       sig[(5 * trunc(n/5) + 1):n] <- sig[diff:1]
     }
-    sig[(trunc(n/20) + 1):(trunc(n/20) + trunc(n/10))] <- rep(1, trunc(n/10)) *
+    sig[(trunc(n/20) + 1):(trunc(n/20) + trunc(n/10))] <- rep(1, trunc(n/10)) * 
       10
     if (trunc(n/20) != 0) {
-      sig[(n - trunc(n/10) + 1):(n + trunc(n/20) - trunc(n/10))] <- rep(1,
+      sig[(n - trunc(n/10) + 1):(n + trunc(n/20) - trunc(n/10))] <- rep(1, 
         trunc(n/20)) * 150
     }
     # zero-mean
