@@ -22,16 +22,18 @@ ITWT2_PO <- function(wc, L, qmf) {
   q <- quadlength(wc)
   n <- q$x
   J <- q$y
-  for (c in 1:n) {
-    col <- wc[, c]
-    wcol <- IWT_PO(col, L, qmf)
-    wc[, c] <- wcol
-  }
-  for (r in 1:n) {
-    row <- wc[r, ]
-    wrow <- IWT_PO(row, L, qmf)
-    wc[r, ] <- wrow
-  }
-  x <- wc
+  # for (c in 1:n) {
+  #   col <- wc[, c]
+  #   wcol <- IWT_PO(col, L, qmf)
+  #   wc[, c] <- wcol
+  # }
+  # for (r in 1:n) {
+  #   row <- wc[r, ]
+  #   wrow <- IWT_PO(row, L, qmf)
+  #   wc[r, ] <- wrow
+  # }
+  # x <- wc
+  wc <- apply(wc, 2, FUN=IWT_PO, L=L, qmf=qmf)
+  x <-  t(apply(wc, 1, FUN=IWT_PO, L=L, qmf=qmf))
   return(x)
 }
