@@ -1,4 +1,4 @@
-#' 3-d tensor wavelet transform (periodized, orthogonal).
+#' 3-d MRA wavelet transform (periodized, orthogonal).
 #'
 #' A three-dimensional Wavelet Transform is computed for the array x.
 #' \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
