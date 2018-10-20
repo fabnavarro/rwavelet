@@ -2,7 +2,7 @@
 % Please edit documentation in R/FWT2_PO.R
 \name{FWT2_PO}
 \alias{FWT2_PO}
-\title{2-d tensor wavelet transform (periodized, orthogonal).}
+\title{2-d MRA wavelet transform (periodized, orthogonal).}
 \usage{
 FWT2_PO(x, L, qmf)
 }
