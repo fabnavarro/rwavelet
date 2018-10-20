@@ -1,4 +1,4 @@
-#' 2-d tensor wavelet transform (periodized, orthogonal).
+#' 2-d MRA wavelet transform (periodized, orthogonal).
 #'
 #' A two-dimensional Wavelet Transform is computed for the array x.
 #' \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
