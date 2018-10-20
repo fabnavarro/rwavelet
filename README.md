@@ -96,7 +96,7 @@ citation("rwavelet")
 #> To cite rwavelet in publications use:
 #> 
 #>   F. Navarro and C. Chesneau (2018). R package rwavelet: Wavelet
-#>   Analysis (Version 0.2.0). Available from
+#>   Analysis (Version 0.3.0). Available from
 #>   http://github.com/fabnavarro/rwavelet
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -105,7 +105,7 @@ citation("rwavelet")
 #>     title = {R package {rwavelet}: Wavelet Analysis},
 #>     author = {F. Navarro and C. Chesneau},
 #>     year = {2018},
-#>     note = {(Version 0.2.0)},
+#>     note = {(Version 0.3.0)},
 #>     url = {http://github.com/fabnavarro/rwavelet},
 #>   }
 ```
