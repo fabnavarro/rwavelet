@@ -11,8 +11,8 @@
 #' @return \code{wc} 2-d wavelet transform.
 #' @examples
 #' qmf <- MakeONFilter('Daubechies', 10)
-#' L <- 3
-#' x <- matrix(rnorm(128^2),ncol=128)
+#' L <- 0
+#' x <- matrix(rnorm(2^2), ncol=2)
 #' wc <- FTWT2_PO(x, L, qmf)
 #' @seealso \code{\link{ITWT2_PO}}, \code{\link{MakeONFilter}}.
 
