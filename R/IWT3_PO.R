@@ -32,19 +32,19 @@ IWT3_PO <- function(wc, L, qmf) {
     all <- 1:nc
     for (iy in 1:nc) {
       for (iz in 1:nc) {
-        x[all, iy, iz] <- UpDyadLo(x[bot, iy, iz], qmf) + UpDyadHi(x[top,
+        x[all, iy, iz] <- UpDyadLo(x[bot, iy, iz], qmf) + UpDyadHi(x[top, 
           iy, iz], qmf)
       }
     }
     for (ix in 1:nc) {
       for (iy in 1:nc) {
-        x[ix, iy, all] <- UpDyadLo(x[ix, iy, bot], qmf) + UpDyadHi(x[ix,
+        x[ix, iy, all] <- UpDyadLo(x[ix, iy, bot], qmf) + UpDyadHi(x[ix, 
           iy, top], qmf)
       }
     }
     for (ix in 1:nc) {
       for (iz in 1:nc) {
-        x[ix, all, iz] <- UpDyadLo(x[ix, bot, iz], qmf) + UpDyadHi(x[ix,
+        x[ix, all, iz] <- UpDyadLo(x[ix, bot, iz], qmf) + UpDyadHi(x[ix, 
           top, iz], qmf)
       }
     }
