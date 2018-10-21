@@ -5,7 +5,7 @@ Version: 0.3.0
 Date: 2018-09-11
 Author: F. Navarro and C. Chesneau
 Maintainer: Navarro Fabien <fabien.navarro@ensai.fr>
-Description: Perform wavelet analysis (orthogonal and translation invariant transforms) with applications to data compression or denoising. Most of the code is a port of 'MATLAB' Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram (<https://statweb.stanford.edu/~wavelab/>).
+Description: Perform wavelet analysis (orthogonal, translation invariant, tensorial, 1-2-3d transforms) with applications to data compression or denoising. Most of the code is a port of 'MATLAB' Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram (<https://statweb.stanford.edu/~wavelab/>).
 URL: http://github.com/fabnavarro/rwavelet
 BugReports: http://github.com/fabnavarro/rwavelet/issues
 License: LGPL (>= 2)
@@ -15,4 +15,3 @@ RoxygenNote: 6.0.1
 Imports: dplyr, signal
 Suggests: knitr, rmarkdown, imager
 VignetteBuilder: knitr
-
