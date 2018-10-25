@@ -2,7 +2,7 @@
 % Please edit documentation in R/FWT3_PO.R
 \name{FWT3_PO}
 \alias{FWT3_PO}
-\title{3-d tensor wavelet transform (periodized, orthogonal).}
+\title{3-d MRA wavelet transform (periodized, orthogonal).}
 \usage{
 FWT3_PO(x, L, qmf)
 }
