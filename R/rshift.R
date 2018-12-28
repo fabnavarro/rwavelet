@@ -11,3 +11,12 @@ rshift <- function(a) {
   n <- length(a)
   return(c(a[n], a[1:(n - 1)]))
 }
+
+#
+# Copyright (c) 1993. Iain M. Johnstone
+#
+
+# Part of WaveLab Version 802
+# Built Sunday, October 3, 1999 8:52:27 AM
+# This is Copyrighted Material
+# For Copying permissions see COPYING.m

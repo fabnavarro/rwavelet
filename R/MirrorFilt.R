@@ -15,3 +15,13 @@ MirrorFilt <- function(x) {
   return(-((-1)^(1:length(x)) * x))
   # TODO check Brani Vidakovic correction return(-rev((-1)^(1:length(x)) * x))
 }
+
+#
+# Copyright (c) 1993. Iain M. Johnstone
+#
+
+# Part of WaveLab Version 802
+# Built Sunday, October 3, 1999 8:52:27 AM
+# This is Copyrighted Material
+# For Copying permissions see COPYING.m
+# Comments? e-mail wavelab@stat.stanford.edu

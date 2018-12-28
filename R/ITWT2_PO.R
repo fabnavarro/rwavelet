@@ -37,3 +37,13 @@ ITWT2_PO <- function(wc, L, qmf) {
   x <-  t(apply(wc, 1, FUN=IWT_PO, L=L, qmf=qmf))
   return(x)
 }
+
+#
+# Copyright (c) 1993. David L. Donoho
+#
+
+#  Part of Wavelab Version 850
+#  Built Tue Jan  3 13:20:40 EST 2006
+#  This is Copyrighted Material
+#  For Copying permissions see COPYING.m
+#  Comments? e-mail wavelab@stat.stanford.edu
