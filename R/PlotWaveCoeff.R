@@ -28,17 +28,13 @@ PlotWaveCoeff <- function(wc, L, scal) {
     PlotSpikes(-j, tj, wavecoef[dyad(j)] * scal, L, J)
     par(new = TRUE)
   }
-  axis(2, at = seq(-J+1, -L, 1), labels = seq(-J+1, -L, 1))
+  axis(2, at = seq(-J + 1, -L, 1), labels = seq(-J + 1, -L, 1))
   axis(1, at = seq(0, 1, 0.2), labels = seq(0, 1, 0.2))
   box()
 }
 
-#
 # Copyright (c) 1993. David L. Donoho
-#
 
-#  Part of Wavelab Version 850
-#  Built Tue Jan  3 13:20:40 EST 2006
-#  This is Copyrighted Material
-#  For Copying permissions see COPYING.m
-#  Comments? e-mail wavelab@stat.stanford.edu
+# Part of Wavelab Version 850 Built Tue Jan 3 13:20:40 EST 2006 This is
+# Copyrighted Material For Copying permissions see COPYING.m Comments? e-mail
+# wavelab@stat.stanford.edu
