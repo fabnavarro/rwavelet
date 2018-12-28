@@ -11,7 +11,7 @@
 #' @param x 3-d array (n by n by n array, n dyadic).
 #' @param L coarse level.
 #' @param qmf quadrature mirror filter.
-#' @return \code{wc} E-d wavelet transform.
+#' @return \code{wc} 3-d wavelet transform.
 #' @examples
 #' qmf <- MakeONFilter('Daubechies', 10)
 #' L <- 3
