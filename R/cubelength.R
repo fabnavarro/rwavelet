@@ -9,7 +9,7 @@
 #' @return \code{J} least power of two greater than n.
 #' @examples
 #' cubelength(array(1:3, c(2,2,2)))
-#'
+
 cubelength <- function(x) {
   s <- dim(x)
   n <- s[1]
