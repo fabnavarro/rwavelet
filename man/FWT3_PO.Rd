@@ -14,7 +14,7 @@ FWT3_PO(x, L, qmf)
 \item{qmf}{quadrature mirror filter.}
 }
 \value{
-\code{wc} E-d wavelet transform.
+\code{wc} 3-d wavelet transform.
 }
 \description{
 A three-dimensional Wavelet Transform is computed for the array x.
