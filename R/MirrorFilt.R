@@ -13,7 +13,7 @@
 
 MirrorFilt <- function(x) {
   #return(-((-1)^(1:length(x)) * x))
-  # TODO check Brani Vidakovic correction
+  #TODO check Brani Vidakovic correction
   return(-rev((-1)^(1:length(x)) * x))
 }
 
