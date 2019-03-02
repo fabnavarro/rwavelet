@@ -16,7 +16,7 @@ MakeSignal(name, n)
 'Cusp2', 'SmoothCusp', 'Piece-Regular' (Piece-Wise Smooth),
 'Piece-Polynomial' (Piece-Wise 3rd degree polynomial).}
 
-\item{n}{desired signal length}
+\item{n}{desired signal length.}
 }
 \value{
 \code{sig} 1-d signal.
