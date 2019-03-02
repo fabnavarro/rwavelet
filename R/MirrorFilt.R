@@ -12,8 +12,7 @@
 #' @seealso \code{\link{DownDyadHi}}.
 
 MirrorFilt <- function(x) {
-  #return(-((-1)^(1:length(x)) * x))
-  # TODO check Brani Vidakovic correction
+  # return(-((-1)^(1:length(x)) * x)) TODO check Brani Vidakovic correction
   return(-rev((-1)^(1:length(x)) * x))
 }
 
