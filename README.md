@@ -1,20 +1,24 @@
 rwavelet
 ========
 
-[![Build Status](https://travis-ci.org/fabnavarro/rwavelet.svg)](https://travis-ci.org/fabnavarro/rwavelet) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rwavelet)](http://cran.r-project.org/package=rwavelet) ![CRAN Downloads](http://cranlogs.r-pkg.org/badges/rwavelet)
+[![Build
+Status](https://travis-ci.org/fabnavarro/rwavelet.svg)](https://travis-ci.org/fabnavarro/rwavelet)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rwavelet)](http://cran.r-project.org/package=rwavelet)
+![CRAN Downloads](http://cranlogs.r-pkg.org/badges/rwavelet)
 
 Wavelet Analysis
 
 Download and Install
 --------------------
 
-Install the devtools package if you haven't already.
+Install the devtools package if you haven’t already.
 
 ``` r
 install.packages("devtools")
 ```
 
-To install the development package, type the following at the R command line:
+To install the development package, type the following at the R command
+line:
 
 ``` r
 devtools::install_github("fabnavarro/rwavelet")
@@ -30,7 +34,8 @@ install.packages("rwavelet")
 Getting Started
 ---------------
 
-Here is an example of denoising of an experimental nuclear magnetic resonance (NMR) spectrum. We start by loading the data:
+Here is an example of denoising of an experimental nuclear magnetic
+resonance (NMR) spectrum. We start by loading the data:
 
 ``` r
 data("RaphNMR")
@@ -39,7 +44,10 @@ n <- length(Y)
 t <- seq(0, 1, length = n)
 ```
 
-Then we specify the coarse decomposition scale *j*<sub>0</sub>, the wavelets we want to use (here, Symmlet with 6 vanishing moments) and we perform a fast wavelet transform to get the noisy wavelet coefficients (Ywd):
+Then we specify the coarse decomposition scale *j*<sub>0</sub>, the
+wavelets we want to use (here, Symmlet with 6 vanishing moments) and we
+perform a fast wavelet transform to get the noisy wavelet coefficients
+(Ywd):
 
 ``` r
 j0 <- 0
@@ -49,7 +57,10 @@ Ywd <- FWT_PO(Y, j0, qmf)
 Ywnoise <- Ywd
 ```
 
-We estimate *σ* the standard deviation of the noise using the maximum absolute deviation (with only the finest scale coefficients). We apply a hard thresholding rule (with a universal threshold) to the coefficient estimators and obtain the estimator by applying an inverse transform:
+We estimate *σ* the standard deviation of the noise using the maximum
+absolute deviation (with only the finest scale coefficients). We apply a
+hard thresholding rule (with a universal threshold) to the coefficient
+estimators and obtain the estimator by applying an inverse transform:
 
 ``` r
 hatsigma <- MAD(Ywd[(2^(J-1)+1):2^J])
@@ -74,7 +85,10 @@ plot(Ywd, ylim=c(-20,20), xlab="", ylab="", main = "Estimated Coefficients")
 
 ![](inst/doc/readme_img/NMR-1.png)
 
-See the [package vignette](http://fnavarro.perso.math.cnrs.fr/rpackage/rwaveletvignette.html) for more details. You could also build and see the vignette associated with the package using the following lines of code
+See the [package
+vignette](http://fnavarro.perso.math.cnrs.fr/rpackage/rwaveletvignette.html)
+for more details. You could also build and see the vignette associated
+with the package using the following lines of code
 
 ``` r
 devtools::install_github("fabnavarro/rwavelet", build_vignettes = TRUE)
