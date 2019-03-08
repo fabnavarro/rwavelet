@@ -6,6 +6,13 @@
 \usage{
 invblock_partition(x, n, L)
 }
+\arguments{
+\item{x}{noisy wc at a given scale.}
+
+\item{n}{scale.}
+
+\item{L}{block size.}
+}
 \description{
 Inversion of the block partition
 }

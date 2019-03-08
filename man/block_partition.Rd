@@ -6,6 +6,11 @@
 \usage{
 block_partition(x, L)
 }
+\arguments{
+\item{x}{noisy wc at a given scale.}
+
+\item{L}{block size.}
+}
 \description{
 Construction of the block partition
 }

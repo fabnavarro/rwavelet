@@ -91,34 +91,65 @@ plot(t, y, xlab="t", ylab="y", main=paste("Noisy", name))
 ## Forward Wavelet Transform (periodized, orthogonal) {#example3}
 ```{r, echo=TRUE}
 qmf <- MakeONFilter('Daubechies', 10)
-L <- 3
-wc <- FWT_PO(y, L, qmf)
-wcf <- FWT_PO(f, L, qmf)
+j0 <- 3
+wc <- FWT_PO(y, j0, qmf)
+wch <- wcs <- wcb <- wc
+wcf <- FWT_PO(f, j0, qmf)
 ```
 
 ## Spike-plot display of wavelet coefficients {#example4}
 ```{r, echo=TRUE}
-PlotWaveCoeff(wc, L, 0.5)
+PlotWaveCoeff(wc, j0, 0.5)
 title("Noisy Wavelet Coefs")
-PlotWaveCoeff(wcf, L, 0.5)
+PlotWaveCoeff(wcf, j0, 0.5)
 title("Original Wavelet Coefs")
 ```
 
-## Universal hard thresholding  {#example5}
+## Universal hard thresholding 
 ```{r, echo=TRUE}
 # estimate sigma using the Median Absolute Deviation
 # using only the fine scale of wc
 hatsigma <- MAD(wc[(2^(J-1)+1):2^J])
 thr <- sqrt(2*log(length(y)))*hatsigma
 # apply hard thresholding 
-wc[(2^(L)+1):n] <- HardThresh(wc[(2^(L)+1):n], thr)
+wch[(2^(j0)+1):n] <- HardThresh(wc[(2^(j0)+1):n], thr)
 # plot the resulting coeficients estimates
-PlotWaveCoeff(wc, L, 0.5)
+PlotWaveCoeff(wch, j0, 0.5)
 title("Estimated Wavelet Coefs")
-fest <- IWT_PO(wc, L, qmf)
+fest <- IWT_PO(wch, j0, qmf)
 snrout <- SNR(f, fest)
 plot(t, fest, type='l', lwd=1.4, col='red', xlab="t", ylab="hat_f(t)",
 	   main=format(round(snrout,2), nsmall=2))
+matlines(t, f, type='l', lty=2)
+```
+
+## Universal soft thresholding 
+```{r, echo=TRUE}
+wcs[(2^(j0)+1):n] <- SoftThresh(wc[(2^(j0)+1):n], thr)
+PlotWaveCoeff(wcs, j0, 0.5)
+title("Estimated Wavelet Coefs (soft)")
+f_soft <- IWT_PO(wcs, j0, qmf)
+plot(t, f_soft, type='l', lwd=1.4, col='red', xlab="t", ylab="hat_f(t)",
+	   main=format(round(SNR(f, f_soft),2), nsmall=2))
+matlines(t, f, type='l', lty=2)
+```
+
+## Universal soft thresholding (Block version)
+```{r}
+L <- 2 # block size
+lamb <- 4.50524
+for(j in (0:(J-1-j0))){
+  HH <- wcb[(2^(J-j-1)+1):2^(J-j)]
+  HH <- block_partition(HH,L)
+  Hm <- pmax(1-lamb*hatsigma^2*L/apply(HH^2,2,sum),0)
+  HH <- HH*repmat(Hm,L,1)
+  HH <- invblock_partition(HH, 2^(J-j-1), L)
+  wcb[(2^(J-j-1)+1):2^(J-j)] <-HH
+}
+
+fest_b <- IWT_PO(wcb,j0,qmf)
+plot(t, fest_b, type='l', lwd=1.4, col='red', xlab="t", ylab="hat_f(t)",
+	   main=format(round(SNR(f, fest_b),2), nsmall=2))
 matlines(t, f, type='l', lty=2)
 ```
 
@@ -144,10 +175,10 @@ plot(y, axes=F, interpolate=F, xlab="", ylab="",
 
 ## Image denoising using hard thresholding
 ```{r, echo=TRUE, message=FALSE}
-wc <- FWT2_PO(as.array(squeeze(y)), L, qmf)
+wc <- FWT2_PO(as.array(squeeze(y)), j0, qmf)
 thr <- 3*sdnoise
 aT <- wc*(abs(wc)>thr)
-fest <- IWT2_PO(aT, L, qmf)
+fest <- IWT2_PO(aT, j0, qmf)
 snrout <- SNR(f, fest)
 plot(as.cimg(fest), axes=FALSE, xlab="", ylab="",
      main=format(round(snrout,2), nsmall=2))

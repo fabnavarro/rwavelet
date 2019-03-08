@@ -1,5 +1,7 @@
 #' Construction of the block partition
 #' @export block_partition
+#' @param x noisy wc at a given scale.
+#' @param L block size.
 block_partition <- function(x, L) {
   n <- length(x)
   nblocks <- floor(n/L)

@@ -1,5 +1,8 @@
 #' Inversion of the block partition
 #' @export invblock_partition
+#' @param x noisy wc at a given scale.
+#' @param n scale.
+#' @param L block size.
 invblock_partition <- function(x, n, L) {
   nblocks <- floor(n/L)
   buf <- matrix(x, c(L, nblocks))
