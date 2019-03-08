@@ -1,4 +1,4 @@
-#' Wavelet Block thresholding
+#' 1d Wavelet Block thresholding
 #'
 #' This function is used to threshold the coefficients by group (or block).
 #'

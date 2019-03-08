@@ -2,7 +2,7 @@
 % Please edit documentation in R/BlockThresh.R
 \name{BlockThresh}
 \alias{BlockThresh}
-\title{Wavelet Block thresholding}
+\title{1d Wavelet Block thresholding}
 \usage{
 BlockThresh(wc, j0, hatsigma, L, qmf, thresh = "hard")
 }
