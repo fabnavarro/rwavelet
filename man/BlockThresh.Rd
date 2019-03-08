@@ -23,5 +23,5 @@ BlockThresh(wc, j0, hatsigma, L, qmf, thresh = "hard")
 \code{wcb} wavelet coefficient estimators.
 }
 \description{
-Wavelet Block thresholding
+This function is used to threshold the coefficients by group (or block).
 }

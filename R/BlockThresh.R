@@ -1,5 +1,7 @@
 #' Wavelet Block thresholding
 #'
+#' This function is used to threshold the coefficients by group (or block).
+#'
 #' @export BlockThresh
 #' @param wc wavelet coefficients.
 #' @param j0 coarsest decomposition scale.
@@ -34,8 +36,10 @@ BlockThresh <- function(wc, j0, hatsigma, L, qmf, thresh = "hard") {
       HH <- invblock_partition(HH, 2^(J - j - 1), L)
       wcb[(2^(J - j - 1) + 1):2^(J - j)] <- HH
     }
-  } else {
-    warning("Possible thresholding rules: hard or soft")
   }
+  #  else {
+  #   print("Possible thresholding rules: hard or soft")
+  # }
+  # TODO: add other thresh rules
   return(wcb)
 }
