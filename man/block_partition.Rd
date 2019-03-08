@@ -2,7 +2,7 @@
 % Please edit documentation in R/block_partition.R
 \name{block_partition}
 \alias{block_partition}
-\title{Construction of the block partition}
+\title{Construct 1d block partition}
 \usage{
 block_partition(x, L)
 }
@@ -12,5 +12,5 @@ block_partition(x, L)
 \item{L}{block size.}
 }
 \description{
-Construction of the block partition
+Construct 1d block partition
 }

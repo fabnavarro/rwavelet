@@ -2,7 +2,7 @@
 % Please edit documentation in R/invblock_partition.R
 \name{invblock_partition}
 \alias{invblock_partition}
-\title{Inversion of the block partition}
+\title{Inversion of the 1d block partition}
 \usage{
 invblock_partition(x, n, L)
 }
@@ -14,5 +14,5 @@ invblock_partition(x, n, L)
 \item{L}{block size.}
 }
 \description{
-Inversion of the block partition
+Inversion of the 1d block partition
 }
