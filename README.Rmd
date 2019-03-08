@@ -45,6 +45,12 @@ install.packages("rwavelet")
 * Linear wavelet estimation/approximation (using 2 fold cross validation, CVLinear)
 * Non linear wavelet estimation/approximation (hard and soft thresholding, can be easily extended to other thresholding rules)
 * Wavelet Block Thresholding estimation/approximation
+* ...
+
+To obtain the complete list of package functions, simply type 
+```{r, eval=FALSE}
+help(package = "rwavelet")
+```
 
 
 ## Getting Started

@@ -46,6 +46,13 @@ General features
 -   Non linear wavelet estimation/approximation (hard and soft
     thresholding, can be easily extended to other thresholding rules)
 -   Wavelet Block Thresholding estimation/approximation
+-   …
+
+To obtain the complete list of package functions, simply type
+
+``` r
+help(package = "rwavelet")
+```
 
 Getting Started
 ---------------
