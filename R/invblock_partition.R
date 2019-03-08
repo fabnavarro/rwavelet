@@ -1,4 +1,4 @@
-#' Inversion of the block partition
+#' Inversion of the 1d block partition
 #' @export invblock_partition
 #' @param x noisy wc at a given scale.
 #' @param n scale.

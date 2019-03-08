@@ -1,4 +1,4 @@
-#' Construction of the block partition
+#' Construct 1d block partition
 #' @export block_partition
 #' @param x noisy wc at a given scale.
 #' @param L block size.
