@@ -1,0 +1,41 @@
+#' Wavelet Block thresholding
+#'
+#' @export BlockThresh
+#' @param wc wavelet coefficients.
+#' @param j0 coarsest decomposition scale.
+#' @param hatsigma estimator of noise variance.
+#' @param L Block size (n mod L must be 0).
+#' @param qmf Orthonormal quadrature mirror filter.
+#' @param thresh "hard" or "soft".
+#' @return \code{y} Wavelet block thresholding estimator.
+
+BlockThresh <- function(wc, j0, hatsigma, L, qmf, thresh = "hard") {
+  n <- length(wc)
+  if (n%%L!=0){warning("The rest of the n/L division must be integer")}
+  wcb <- wc
+  J <- log2(n)
+  lamb <- 4.50524
+  if (thresh == "hard") {
+    for (j in (0:(J - 1 - j0))) {
+      HH <- wc[(2^(J - j - 1) + 1):2^(J - j)]
+      HH <- block_partition(HH, L)
+      Hm <- apply(HH^2, 2, sum) > lamb * hatsigma^2 * L
+      HH <- HH * repmat(Hm, L, 1)
+      HH <- invblock_partition(HH, 2^(J - j - 1), L)
+      wcb[(2^(J - j - 1) + 1):2^(J - j)] <- HH
+    }
+  }
+  if (thresh == "soft") {
+    for (j in (0:(J - 1 - j0))) {
+      HH <- wc[(2^(J - j - 1) + 1):2^(J - j)]
+      HH <- block_partition(HH, L)
+      Hm <- pmax(1 - lamb * hatsigma^2 * L/apply(HH^2, 2, sum), 0)
+      HH <- HH * repmat(Hm, L, 1)
+      HH <- invblock_partition(HH, 2^(J - j - 1), L)
+      wcb[(2^(J - j - 1) + 1):2^(J - j)] <- HH
+    }
+  } else {
+    warning("Possible thresholding rules: hard or soft")
+  }
+  y <- IWT_PO(wcb, j0, qmf)
+}
