@@ -52,7 +52,6 @@ To obtain the complete list of package functions, simply type
 help(package = "rwavelet")
 ```
 
-
 ## Getting Started
 
 Here is an example of denoising of an experimental nuclear magnetic resonance (NMR) spectrum. We start by loading the data:
