@@ -18,3 +18,7 @@ rwavelet News
 
 # rwavelet 0.3.0. release
 * Added 2-d Tensor Discrete Wavelet Transformation (FTWT2_PO, ITWT2_PO)
+
+# rwavelet 0.4.0. release
+* Added 1-d Wavelet Block Thresholding (BlockThresh)
+* 2-Fold Cross-Validation for choising the truncation parameter (CVlinear)
