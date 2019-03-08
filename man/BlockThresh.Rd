@@ -20,7 +20,7 @@ BlockThresh(wc, j0, hatsigma, L, qmf, thresh = "hard")
 \item{thresh}{"hard" or "soft".}
 }
 \value{
-\code{y} Wavelet block thresholding estimator.
+\code{wcb} wavelet coefficient estimators.
 }
 \description{
 Wavelet Block thresholding

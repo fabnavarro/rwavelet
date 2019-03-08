@@ -7,7 +7,7 @@
 #' @param L Block size (n mod L must be 0).
 #' @param qmf Orthonormal quadrature mirror filter.
 #' @param thresh "hard" or "soft".
-#' @return \code{y} Wavelet block thresholding estimator.
+#' @return \code{wcb} wavelet coefficient estimators.
 
 BlockThresh <- function(wc, j0, hatsigma, L, qmf, thresh = "hard") {
   n <- length(wc)
@@ -37,5 +37,5 @@ BlockThresh <- function(wc, j0, hatsigma, L, qmf, thresh = "hard") {
   } else {
     warning("Possible thresholding rules: hard or soft")
   }
-  y <- IWT_PO(wcb, j0, qmf)
+  return(wcb)
 }
