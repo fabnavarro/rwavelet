@@ -37,6 +37,16 @@ To install the CRAN version of the package, type the following:
 install.packages("rwavelet")
 ```
 
+## General features
+
+* 1d, 2d and 3d MRA Forward/Inverse Wavelet Transforms Periodized Orthogonal (FWT_PO, IFWT_PO)
+* 1d, 2d tensor Wavelet Transform Periodized Orthogonal (FTWT_PO, ITWT_PO)
+* 1d Translation Invariant Forward Wavelet Transform (FWT_TI, IWT_TI, also know as Redundant wavelet transform, Maximal overlap wavelet transform or Undecimated wavelet transform)
+* Linear wavelet estimation/approximation (using 2 fold cross validation, CVLinear)
+* Non linear wavelet estimation/approximation (hard and soft thresholding, can be easily extended to other thresholding rules)
+* Wavelet Block Thresholding estimation/approximation
+
+
 ## Getting Started
 
 Here is an example of denoising of an experimental nuclear magnetic resonance (NMR) spectrum. We start by loading the data:
