@@ -45,7 +45,7 @@ General features
     validation, CVLinear)
 -   Non linear wavelet estimation/approximation (hard and soft
     thresholding, can be easily extended to other thresholding rules)
--   Wavelet Block Thresholding estimation/approximation
+-   1d Wavelet Block Thresholding estimation/approximation
 -   …
 
 To obtain the complete list of package functions, simply type
@@ -75,7 +75,7 @@ perform a fast wavelet transform to get the noisy wavelet coefficients
 ``` r
 j0 <- 0
 J <- log2(n)
-qmf <- MakeONFilter('Symmlet',6)
+qmf <- MakeONFilter('Symmlet', 6)
 Ywd <- FWT_PO(Y, j0, qmf)
 Ywnoise <- Ywd
 ```

@@ -44,7 +44,7 @@ install.packages("rwavelet")
 * 1d Translation Invariant Forward Wavelet Transform (FWT_TI, IWT_TI, also know as Redundant wavelet transform, Maximal overlap wavelet transform or Undecimated wavelet transform)
 * Linear wavelet estimation/approximation (using 2 fold cross validation, CVLinear)
 * Non linear wavelet estimation/approximation (hard and soft thresholding, can be easily extended to other thresholding rules)
-* Wavelet Block Thresholding estimation/approximation
+* 1d Wavelet Block Thresholding estimation/approximation
 * ...
 
 To obtain the complete list of package functions, simply type 
@@ -66,7 +66,7 @@ Then we specify the coarse decomposition scale $j_0$, the wavelets we want to us
 ```{r}
 j0 <- 0
 J <- log2(n)
-qmf <- MakeONFilter('Symmlet',6)
+qmf <- MakeONFilter('Symmlet', 6)
 Ywd <- FWT_PO(Y, j0, qmf)
 Ywnoise <- Ywd
 ```
