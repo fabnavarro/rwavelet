@@ -39,8 +39,9 @@ General features
 -   1d, 2d tensor Wavelet Transform Periodized Orthogonal (FTWT\_PO,
     ITWT\_PO)
 -   1d Translation Invariant Forward Wavelet Transform (FWT\_TI,
-    IWT\_TI, also know as Redundant wavelet transform, Maximal overlap
-    wavelet transform or Undecimated wavelet transform)
+    IWT\_TI, also know as redundant wavelet transform, maximal overlap
+    wavelet transform, undecimated wavelet transform or stationary
+    wavelet transform)
 -   Linear wavelet estimation/approximation (using 2 fold cross
     validation, CVLinear)
 -   Non linear wavelet estimation/approximation (hard and soft
