@@ -8,12 +8,14 @@
 #' @param hatsigma estimator of noise variance.
 #' @param L Block size (n mod L must be 0).
 #' @param qmf Orthonormal quadrature mirror filter.
-#' @param thresh "hard" or "soft".
+#' @param thresh 'hard' or 'soft'.
 #' @return \code{wcb} wavelet coefficient estimators.
 
 BlockThresh <- function(wc, j0, hatsigma, L, qmf, thresh = "hard") {
   n <- length(wc)
-  if (n%%L!=0){warning("The rest of the n/L division must be integer")}
+  if (n%%L != 0) {
+    warning("The rest of the n/L division must be integer")
+  }
   wcb <- wc
   J <- log2(n)
   lamb <- 4.50524
@@ -37,9 +39,7 @@ BlockThresh <- function(wc, j0, hatsigma, L, qmf, thresh = "hard") {
       wcb[(2^(J - j - 1) + 1):2^(J - j)] <- HH
     }
   }
-  #  else {
-  #   print("Possible thresholding rules: hard or soft")
-  # }
-  # TODO: add other thresh rules
+  # else { print('Possible thresholding rules: hard or soft') } TODO: add other
+  # thresh rules
   return(wcb)
 }

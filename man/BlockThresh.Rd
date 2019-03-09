@@ -17,7 +17,7 @@ BlockThresh(wc, j0, hatsigma, L, qmf, thresh = "hard")
 
 \item{qmf}{Orthonormal quadrature mirror filter.}
 
-\item{thresh}{"hard" or "soft".}
+\item{thresh}{'hard' or 'soft'.}
 }
 \value{
 \code{wcb} wavelet coefficient estimators.
