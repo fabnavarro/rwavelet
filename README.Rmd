@@ -40,8 +40,8 @@ install.packages("rwavelet")
 ## General features
 
 * 1d, 2d and 3d MRA Forward/Inverse Wavelet Transforms Periodized Orthogonal (FWT_PO, IFWT_PO)
-* 1d, 2d tensor Wavelet Transform Periodized Orthogonal (FTWT_PO, ITWT_PO)
-* 1d Translation Invariant Forward Wavelet Transform (FWT_TI, IWT_TI, also know as redundant wavelet transform, maximal overlap wavelet transform, undecimated wavelet transform or stationary wavelet transform)
+* 1d, 2d tensor Forward/Inverse Wavelet Transform Periodized Orthogonal (FTWT_PO, ITWT_PO)
+* 1d Translation Invariant Forward/Inverse Wavelet Transform (FWT_TI, IWT_TI, also know as redundant wavelet transform, maximal overlap wavelet transform, undecimated wavelet transform or stationary wavelet transform)
 * Linear wavelet estimation/approximation (using 2 fold cross validation, CVLinear)
 * Non linear wavelet estimation/approximation (hard and soft thresholding, can be easily extended to other thresholding rules)
 * 1d Wavelet Block Thresholding estimation/approximation

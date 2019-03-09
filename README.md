@@ -36,9 +36,9 @@ General features
 
 -   1d, 2d and 3d MRA Forward/Inverse Wavelet Transforms Periodized
     Orthogonal (FWT\_PO, IFWT\_PO)
--   1d, 2d tensor Wavelet Transform Periodized Orthogonal (FTWT\_PO,
-    ITWT\_PO)
--   1d Translation Invariant Forward Wavelet Transform (FWT\_TI,
+-   1d, 2d tensor Forward/Inverse Wavelet Transform Periodized
+    Orthogonal (FTWT\_PO, ITWT\_PO)
+-   1d Translation Invariant Forward/Inverse Wavelet Transform (FWT\_TI,
     IWT\_TI, also know as redundant wavelet transform, maximal overlap
     wavelet transform, undecimated wavelet transform or stationary
     wavelet transform)
