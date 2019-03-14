@@ -191,7 +191,7 @@ plot(as.cimg(fest), axes=FALSE, xlab="", ylab="",
 # 3d example
 ## Load and plot a 3d image
 
-```{r}
+```{r, eval=FALSE}
 library(misc3d)
 library(rgl)
 data("SLphantom")
@@ -200,7 +200,7 @@ contour3d(SLphantom,0)
 rglwidget()
 ```
 
-```{r}
+```{r, eval=FALSE}
 sig <- sd(SLphantom)
 sdnoise <- sig/SNR
 y <- SLphantom + rnorm(n^3, mean=0, sd=sdnoise)
@@ -213,7 +213,7 @@ fhat <- IWT3_PO(wc, j0, qmf)
 ```
 
 
-```{r}
+```{r, eval=FALSE}
 op <- par(mfrow=c(3,3), mgp = c(1.2, 0.5, 0), tcl = -0.2,
 mar = .1 + c(0.1,0.1,0.1,0.1), oma = c(0,0,0,0))
 ll=screen=list(z = 130, x = -80)
