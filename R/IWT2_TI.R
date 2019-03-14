@@ -12,8 +12,6 @@
 #' TIWT <- FWT2_TI(x, L, qmf)
 #' xr <- IWT2_TI(TIWT,L,qmf)
 
-# % See Also % FWT2_TI, IWT2_TIMedian %
-
 IWT2_TI <- function(tiwt, L, qmf) {
   n <- dim(tiwt)[2]
   J <- log2(n)

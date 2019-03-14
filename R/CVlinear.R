@@ -13,7 +13,7 @@
 #' @return \code{CritCV} Cross validation criteria.
 #' @return \code{hat_f_m_2FCV}
 #' @references
-#' Nason, G. P. (1996). Wavelet shrinkage using cross‐validation. \emph{Journal of the Royal Statistical Society: Series B}, 58(2), 463-479.
+#' Nason, G. P. (1996). Wavelet shrinkage using cross-validation. \emph{Journal of the Royal Statistical Society: Series B}, 58(2), 463-479.
 #'
 #' Navarro, F. and Saumard, A. (2017). Slope heuristics and V-Fold model selection in heteroscedastic regression using strongly localized bases. \emph{ESAIM: Probability and Statistics}, 21, 412-451.
 

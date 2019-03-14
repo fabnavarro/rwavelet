@@ -15,8 +15,6 @@
 #' qmf <- MakeONFilter('Haar')
 #' TIWT <- FWT2_TI(x, L, qmf)
 
-# % See Also % IWT2_TI, IWT2_TIMedian %
-
 FWT2_TI <- function(x, L, qmf) {
   q <- quadlength(x)
   n <- q$x
