@@ -80,7 +80,7 @@ fhat <- IWT_PO(Ywd, j0, qmf)
 ```
 
 Finally, we plot the resulting estimator:
-```{r, NMR, fig.width=8, fig.height=5}
+```{r, NMR, fig.width=8, fig.height=5} 
 par(mfrow=c(2,2), mgp = c(1.2, 0.5, 0), tcl = -0.2,
     mar = .1 + c(2.5,2.5,1,1), oma = c(0,0,0,0))
 plot(t,Y,xlab="", ylab="", main="Observations")
