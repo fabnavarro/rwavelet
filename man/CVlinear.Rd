@@ -25,5 +25,5 @@ CVlinear(Y, L, qmf, D, wc)
 \description{
 Selection of the number of wavelet coefficients to be maintained by the
 cross validation method proposed by Nason in the case of threshold
-selection. This method is adapted here to select linear estimators.
+selection. This method is adapted here to select among linear estimators.
 }
