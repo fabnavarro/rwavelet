@@ -38,10 +38,10 @@ General features
     Orthogonal (FWT\_PO, IFWT\_PO)
 -   1d, 2d tensor Forward/Inverse Wavelet Transform Periodized
     Orthogonal (FTWT\_PO, ITWT\_PO)
--   1d Translation Invariant Forward/Inverse Wavelet Transform (FWT\_TI,
-    IWT\_TI, also know as redundant wavelet transform, maximal overlap
-    wavelet transform, undecimated wavelet transform or stationary
-    wavelet transform)
+-   1d, 2d Translation Invariant Forward/Inverse Wavelet Transform
+    (FWT\_TI, IWT\_TI, also know as redundant wavelet transform, maximal
+    overlap wavelet transform, undecimated wavelet transform or
+    stationary wavelet transform)
 -   Linear wavelet estimation/approximation (using 2 fold cross
     validation, CVLinear)
 -   Non linear wavelet estimation/approximation (hard and soft
