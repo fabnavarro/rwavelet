@@ -27,3 +27,8 @@ Selection of the number of wavelet coefficients to be maintained by the
 cross validation method proposed by Nason in the case of threshold
 selection. This method is adapted here to select among linear estimators.
 }
+\references{
+Nason, G. P. (1996). Wavelet shrinkage using cross‐validation. Journal of the Royal Statistical Society: Series B, 58(2), 463-479.
+
+Navarro, F., & Saumard, A. (2017). Slope heuristics and V-Fold model selection in heteroscedastic regression using strongly localized bases. ESAIM: Probability and Statistics, 21, 412-451.
+}
