@@ -17,3 +17,5 @@ rwavelet 0.4.0. release
 -   Added 1-d Wavelet Block Thresholding (BlockThresh)
 -   2-Fold Cross-Validation for choising the truncation parameter
     (CVlinear)
+-   Added 2-d Translation Invariant Forward/Inverse Wavelet Transform
+    (FWT2\_TI, IWT2\_TI)
