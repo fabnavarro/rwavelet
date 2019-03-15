@@ -2,7 +2,7 @@
 % Please edit documentation in R/aconv.R
 \name{aconv}
 \alias{aconv}
-\title{Convolution Tool for Two-Scale Transform.}
+\title{Convolution tool for two-scale transform}
 \usage{
 aconv(f, x)
 }

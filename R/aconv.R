@@ -1,4 +1,4 @@
-#' Convolution Tool for Two-Scale Transform.
+#' Convolution tool for two-scale transform
 #'
 #' Filtering by periodic convolution of x with the
 #' time-reverse of f.
