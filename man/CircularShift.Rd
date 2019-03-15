@@ -2,7 +2,7 @@
 % Please edit documentation in R/CircularShift.R
 \name{CircularShift}
 \alias{CircularShift}
-\title{Circular Shifting of a matrix/image,}
+\title{Circular Shifting of a matrix/image}
 \usage{
 CircularShift(matrix, colshift = 0, rowshift = 0)
 }
@@ -17,10 +17,13 @@ CircularShift(matrix, colshift = 0, rowshift = 0)
 \code{result} 2-d shifted signal.
 }
 \description{
-pixels that get shifted off one side of the image
+Pixels that get shifted off one side of the image
 are put back on the other side.
 }
 \examples{
 A <- matrix(1:4, ncol=2, byrow=TRUE)
-CircularShift(A,0,-1)
+CircularShift(A, 0, -1)
+}
+\seealso{
+\code{\link{FWT2_TI}}, \code{\link{IWT2_TI}}.
 }
