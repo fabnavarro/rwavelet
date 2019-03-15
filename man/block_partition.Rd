@@ -7,10 +7,24 @@
 block_partition(x, L)
 }
 \arguments{
-\item{x}{noisy wc at a given scale.}
+\item{x}{(noisy) wc at a given scale.}
 
 \item{L}{block size.}
 }
+\value{
+\code{out} partition of coefficients by block.
+}
 \description{
-Construct 1d block partition
+This function is used to group the coefficients into blocks (or groups) of size L.
+}
+\examples{
+x <- MakeSignal('Ramp', 8)
+j0 <- 0
+qmf <- MakeONFilter('Haar')
+wc <- FWT_PO(x, j0, qmf)
+L <- 2
+wcb <- block_partition(wc, L)
+}
+\seealso{
+\code{\link{invblock_partition}}, \code{\link{BlockThresh}}.
 }
