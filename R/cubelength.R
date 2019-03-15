@@ -1,6 +1,6 @@
-#' Find length and dyadic length of square array.
+#' Find length and dyadic length of square array
 #'
-#' 3-D counterpart of Donoho's quadlength utilized by the 2D pair.
+#' 3d counterpart of Donoho's quadlength utilized by the 2d pair.
 #' Original matlab code Vicki Yang and Brani Vidakovic.
 #'
 #' @export cubelength
@@ -9,6 +9,7 @@
 #' @return \code{J} least power of two greater than n.
 #' @examples
 #' cubelength(array(1:3, c(2,2,2)))
+#' @seealso \code{\link{FWT3_PO}}, \code{\link{IWT3_PO}}.
 
 cubelength <- function(x) {
   s <- dim(x)

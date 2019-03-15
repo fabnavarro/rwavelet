@@ -2,7 +2,7 @@
 % Please edit documentation in R/cubelength.R
 \name{cubelength}
 \alias{cubelength}
-\title{Find length and dyadic length of square array.}
+\title{Find length and dyadic length of square array}
 \usage{
 cubelength(x)
 }
@@ -15,9 +15,12 @@ cubelength(x)
 \code{J} least power of two greater than n.
 }
 \description{
-3-D counterpart of Donoho's quadlength utilized by the 2D pair.
+3d counterpart of Donoho's quadlength utilized by the 2d pair.
 Original matlab code Vicki Yang and Brani Vidakovic.
 }
 \examples{
 cubelength(array(1:3, c(2,2,2)))
+}
+\seealso{
+\code{\link{FWT3_PO}}, \code{\link{IWT3_PO}}.
 }
