@@ -2,7 +2,7 @@
 % Please edit documentation in R/FWT2_TI.R
 \name{FWT2_TI}
 \alias{FWT2_TI}
-\title{2-D Translation Invariant Forward Wavelet Transform.}
+\title{2-d Translation Invariant Forward Wavelet Transform}
 \usage{
 FWT2_TI(x, L, qmf)
 }
