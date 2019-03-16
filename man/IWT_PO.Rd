@@ -2,7 +2,7 @@
 % Please edit documentation in R/IWT_PO.R
 \name{IWT_PO}
 \alias{IWT_PO}
-\title{Inverse Wavelet Transform (periodized, orthogonal).}
+\title{Inverse Wavelet Transform (periodized, orthogonal)}
 \usage{
 IWT_PO(wc, L, qmf)
 }
@@ -18,7 +18,7 @@ IWT_PO(wc, L, qmf)
 }
 \description{
 Suppose \code{wc <- FWT_PO(x,L,qmf)} where \code{qmf} is an orthonormal quad.
-mirror filter, e.g. one made by\code{\link{MakeONFilter}}.
+mirror filter, e.g. one made by \code{\link{MakeONFilter}}.
 Then x can be reconstructed by \code{x <- IWT_PO(wc,L,qmf)}.
 }
 \examples{

@@ -1,7 +1,7 @@
-#' Inverse Wavelet Transform (periodized, orthogonal).
+#' Inverse Wavelet Transform (periodized, orthogonal)
 #'
 #' Suppose \code{wc <- FWT_PO(x,L,qmf)} where \code{qmf} is an orthonormal quad.
-#' mirror filter, e.g. one made by\code{\link{MakeONFilter}}.
+#' mirror filter, e.g. one made by \code{\link{MakeONFilter}}.
 #' Then x can be reconstructed by \code{x <- IWT_PO(wc,L,qmf)}.
 #'
 #' @export IWT_PO
