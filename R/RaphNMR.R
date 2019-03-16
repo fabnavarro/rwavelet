@@ -1,4 +1,4 @@
-#' Nuclear magnetic resonance (NMR) signal.
+#' Nuclear magnetic resonance (NMR) signal
 #'
 #' A dataset containing a NMR signal
 #'

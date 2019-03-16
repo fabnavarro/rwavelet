@@ -3,7 +3,7 @@
 \docType{data}
 \name{RaphNMR}
 \alias{RaphNMR}
-\title{Nuclear magnetic resonance (NMR) signal.}
+\title{Nuclear magnetic resonance (NMR) signal}
 \format{A numeric vector of length 1024}
 \source{
 MRS Unit, VA Medical Center, San Francisco. Adrain Maudsley, Ph.D., Professor of Radiology.
