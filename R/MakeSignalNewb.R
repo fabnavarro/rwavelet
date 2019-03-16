@@ -1,4 +1,4 @@
-#' Make artificial 1-d signal.
+#' Make artificial 1-d signal
 #'
 #' @export MakeSignalNewb
 #' @import utils

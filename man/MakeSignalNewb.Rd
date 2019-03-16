@@ -2,7 +2,7 @@
 % Please edit documentation in R/MakeSignalNewb.R
 \name{MakeSignalNewb}
 \alias{MakeSignalNewb}
-\title{Make artificial 1-d signal.}
+\title{Make artificial 1-d signal}
 \usage{
 MakeSignalNewb(name, n)
 }
@@ -17,7 +17,7 @@ MakeSignalNewb(name, n)
 \code{sig} 1-d signal.
 }
 \description{
-Make artificial 1-d signal.
+Make artificial 1-d signal
 }
 \examples{
 name <- 'Cusp'
