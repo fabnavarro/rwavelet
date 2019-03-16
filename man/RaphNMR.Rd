@@ -13,7 +13,7 @@ MRS Unit, VA Medical Center, San Francisco. Adrain Maudsley, Ph.D., Professor of
     for restoring NMR Spectra.
 }
 \usage{
-data(RaphNMR).
+data(RaphNMR)
 }
 \description{
 A dataset containing a NMR signal.
