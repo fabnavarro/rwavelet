@@ -2,7 +2,7 @@
 % Please edit documentation in R/MakeSignal.R
 \name{MakeSignal}
 \alias{MakeSignal}
-\title{Make artificial signal.}
+\title{Make artificial signal}
 \usage{
 MakeSignal(name, n)
 }
@@ -22,7 +22,7 @@ MakeSignal(name, n)
 \code{sig} 1-d signal.
 }
 \description{
-Make artificial signal.
+Make artificial signal
 }
 \examples{
 name <- 'Cusp'
