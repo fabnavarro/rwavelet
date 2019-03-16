@@ -1,4 +1,4 @@
-#' Translation Invariant Forward Wavelet Transform.
+#' Translation Invariant Forward Wavelet Transform
 #'
 #' 1. \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
 #' 2. usually, \code{length(qmf) < 2^(L+1)}.
