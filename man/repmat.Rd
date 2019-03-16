@@ -2,17 +2,20 @@
 % Please edit documentation in R/repmat.R
 \name{repmat}
 \alias{repmat}
-\title{Replicate and tile an array.}
+\title{Replicate and tile an array}
 \usage{
 repmat(a, n, m)
 }
 \arguments{
-\item{a}{input array (scalar, vector, matrix)}
+\item{a}{input array (scalar, vector, matrix).}
 
-\item{n}{number of time to repeat input array in row and column dimensions}
+\item{n}{number of time to repeat input array in row and column dimensions.}
 
-\item{m}{repetition factor}
+\item{m}{repetition factor.}
 }
 \description{
-Replicate and tile an array.
+Repeat copies of array (equivalent of the repmat matlab function).
+}
+\examples{
+repmat(10,3,2)
 }
