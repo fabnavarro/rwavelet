@@ -1,4 +1,4 @@
-#'  Plot 1-d signal as baseline with series of spikes.
+#'  Plot 1-d signal as baseline with series of spikes
 #'
 #' @export PlotSpikes
 #' @param base number, baseline level.
@@ -20,7 +20,7 @@ PlotSpikes <- function(base, t, x, L, J) {
   xx <- rbind(b, x + base, b)
   u <- cbind(0, as.vector(tt), 1)
   v <- cbind(base, as.vector(xx), base)
-  return(plot(u, v, type = "l", xlim = c(0, 1), ylim = c(-J, -L + 1), axes = FALSE, 
+  return(plot(u, v, type = "l", xlim = c(0, 1), ylim = c(-J, -L + 1), axes = FALSE,
     xlab = "", ylab = ""))
 }
 

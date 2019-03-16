@@ -2,7 +2,7 @@
 % Please edit documentation in R/PlotSpikes.R
 \name{PlotSpikes}
 \alias{PlotSpikes}
-\title{Plot 1-d signal as baseline with series of spikes.}
+\title{Plot 1-d signal as baseline with series of spikes}
 \usage{
 PlotSpikes(base, t, x, L, J)
 }
@@ -21,7 +21,7 @@ PlotSpikes(base, t, x, L, J)
 A plot of spikes on a baseline.
 }
 \description{
-Plot 1-d signal as baseline with series of spikes.
+Plot 1-d signal as baseline with series of spikes
 }
 \examples{
 \dontrun{
