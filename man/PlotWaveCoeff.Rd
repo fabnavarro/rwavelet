@@ -2,7 +2,7 @@
 % Please edit documentation in R/PlotWaveCoeff.R
 \name{PlotWaveCoeff}
 \alias{PlotWaveCoeff}
-\title{Spike-plot display of wavelet coefficients.}
+\title{Spike-plot display of wavelet coefficients}
 \usage{
 PlotWaveCoeff(wc, L, scal)
 }
@@ -18,7 +18,7 @@ A display of wavelet coefficients (coarsest level
         NOT included) by level and position.
 }
 \description{
-Spike-plot display of wavelet coefficients.
+Spike-plot display of wavelet coefficients
 }
 \examples{
 x <- MakeSignal('Ramp', 128)

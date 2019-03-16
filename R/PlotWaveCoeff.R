@@ -1,4 +1,4 @@
-#'  Spike-plot display of wavelet coefficients.
+#'  Spike-plot display of wavelet coefficients
 #'
 #' @export PlotWaveCoeff
 #' @param wc 1-d wavelet transform.
