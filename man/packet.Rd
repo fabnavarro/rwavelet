@@ -2,7 +2,7 @@
 % Please edit documentation in R/packet.R
 \name{packet}
 \alias{packet}
-\title{Packet table indexing.}
+\title{Packet table indexing}
 \usage{
 packet(d, b, n)
 }
@@ -11,13 +11,13 @@ packet(d, b, n)
 
 \item{b}{block index among 2^d possibilities at depth d.}
 
-\item{n}{length of signal}
+\item{n}{length of signal.}
 }
 \value{
 \code{p} linear indices of all coeff's in that block.
 }
 \description{
-Packet table indexing.
+Packet table indexing
 }
 \examples{
 packet(1, 1, 8)
