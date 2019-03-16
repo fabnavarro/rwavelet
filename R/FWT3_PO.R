@@ -1,6 +1,6 @@
-#' 3-d MRA wavelet transform (periodized, orthogonal).
+#' 3-d MRA Forward Wavelet Transform (periodized, orthogonal)
 #'
-#' A three-dimensional Wavelet Transform is computed for the array x.
+#' A three-dimensional wavelet transform is computed for the array x.
 #' \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
 #' To reconstruct, use \code{\link{IWT3_PO}}.
 #'
