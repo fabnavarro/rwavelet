@@ -1,4 +1,4 @@
-#' Inverse 2-d MRA wavelet transform (periodized, orthogonal).
+#' Inverse 2-d MRA Wavelet Transform (periodized, orthogonal)
 #'
 #' If \code{wc} is the result of a forward 2d wavelet transform, with \code{wc <- FWT2_PO(x,L,qmf)}.
 #' then \code{x <- IWT2_PO(wc,L,qmf)} reconstructs \code{x} exactly
@@ -27,7 +27,7 @@ IWT2_PO <- function(wc, L, qmf) {
     bot <- 1:(nc/2)
     all <- 1:nc
     for (iy in 1:nc) {
-      x[all, iy] <- t(UpDyadLo(t(x[bot, iy]), qmf)) + t(UpDyadHi(t(x[top, 
+      x[all, iy] <- t(UpDyadLo(t(x[bot, iy]), qmf)) + t(UpDyadHi(t(x[top,
         iy]), qmf))
     }
     for (ix in 1:nc) {

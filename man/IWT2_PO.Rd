@@ -2,7 +2,7 @@
 % Please edit documentation in R/IWT2_PO.R
 \name{IWT2_PO}
 \alias{IWT2_PO}
-\title{Inverse 2-d MRA wavelet transform (periodized, orthogonal).}
+\title{Inverse 2-d MRA Wavelet Transform (periodized, orthogonal)}
 \usage{
 IWT2_PO(wc, L, qmf)
 }
