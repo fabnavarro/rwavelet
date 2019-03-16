@@ -2,7 +2,7 @@
 % Please edit documentation in R/MakeONFilter.R
 \name{MakeONFilter}
 \alias{MakeONFilter}
-\title{Generate Orthonormal QMF Filter for Wavelet Transform.}
+\title{Generate Orthonormal QMF Filter for Wavelet Transform}
 \usage{
 MakeONFilter(Type, Par)
 }
