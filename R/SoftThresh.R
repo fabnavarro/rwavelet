@@ -1,4 +1,4 @@
-#' Apply Soft Threshold.
+#' Apply Soft Threshold
 #'
 #' @export SoftThresh
 #' @param y Noisy Data.
@@ -12,6 +12,7 @@
 #' thr <- 2
 #' wct <- SoftThresh(wc, thr)
 #' fsoft <- IWT_PO(wct, L, qmf)
+#' @seealso \code{\link{HardThresh}}
 
 SoftThresh <- function(y, t) {
   res <- (abs(y) - t)
