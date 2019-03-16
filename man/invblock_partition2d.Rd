@@ -7,12 +7,28 @@
 invblock_partition2d(x, n, L)
 }
 \arguments{
-\item{x}{noisy wc at a given scale.}
+\item{x}{partition of coefficients by block.}
 
 \item{n}{scale.}
 
 \item{L}{block size.}
 }
+\value{
+\code{out} coefficients.
+}
 \description{
 Inversion of the 2d block partition
+}
+\examples{
+n <- 2
+x <- matrix(rnorm(n^2), ncol=2)
+j0 <- 0
+qmf <- MakeONFilter('Haar')
+wc <- FWT2_PO(x, j0, qmf)
+L <- 2
+wcb <- block_partition2d(wc, L)
+wcib <- invblock_partition2d(wcb, n, L)
+}
+\seealso{
+\code{\link{block_partition2d}}
 }
