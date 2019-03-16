@@ -2,7 +2,7 @@
 % Please edit documentation in R/quadlength.R
 \name{quadlength}
 \alias{quadlength}
-\title{Find length and dyadic length of square matrix.}
+\title{Find length and dyadic length of square matrix}
 \usage{
 quadlength(x)
 }
