@@ -1,4 +1,4 @@
-#' Inverse 2-d tensor wavelet transform (periodized, orthogonal).
+#' Inverse 2-d Tensor Wavelet Transform (periodized, orthogonal)
 #'
 #' If \code{wc} is the result of a forward 2d wavelet transform,
 #' with \code{wc <- FTWT2_PO(x,L,qmf)}, then \code{x <- ITWT2_PO(wc,L,qmf)}

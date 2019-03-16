@@ -2,7 +2,7 @@
 % Please edit documentation in R/ITWT2_PO.R
 \name{ITWT2_PO}
 \alias{ITWT2_PO}
-\title{Inverse 2-d tensor wavelet transform (periodized, orthogonal).}
+\title{Inverse 2-d Tensor Wavelet Transform (periodized, orthogonal)}
 \usage{
 ITWT2_PO(wc, L, qmf)
 }
