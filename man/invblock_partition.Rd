@@ -16,3 +16,16 @@ invblock_partition(x, n, L)
 \description{
 Inversion of the 1d block partition
 }
+\examples{
+n <- 8
+x <- MakeSignal('Ramp', n)
+j0 <- 1
+qmf <- MakeONFilter('Haar')
+wc <- FWT_PO(x, j0, qmf)
+L <- 2
+wcb <- block_partition(wc, L)
+wcib <- invblock_partition(wcb, n, L)
+}
+\seealso{
+\code{\link{block_partition}}, \code{\link{BlockThresh}}.
+}
