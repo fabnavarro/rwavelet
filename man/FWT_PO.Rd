@@ -2,7 +2,7 @@
 % Please edit documentation in R/FWT_PO.R
 \name{FWT_PO}
 \alias{FWT_PO}
-\title{Forward Wavelet Transform (periodized, orthogonal).}
+\title{Forward Wavelet Transform (periodized, orthogonal)}
 \usage{
 FWT_PO(x, L, qmf)
 }

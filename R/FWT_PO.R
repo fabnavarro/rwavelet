@@ -1,4 +1,4 @@
-#' Forward Wavelet Transform (periodized, orthogonal).
+#' Forward Wavelet Transform (periodized, orthogonal)
 #'
 #' 1. \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
 #' 2. usually, \code{length(qmf) < 2^(L+1)}.
