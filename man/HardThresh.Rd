@@ -2,7 +2,7 @@
 % Please edit documentation in R/HardThresh.R
 \name{HardThresh}
 \alias{HardThresh}
-\title{Apply Hard Threshold.}
+\title{Apply Hard Threshold}
 \usage{
 HardThresh(y, t)
 }
@@ -15,7 +15,7 @@ HardThresh(y, t)
 \code{x} filtered result (y 1_{|y|>t}).
 }
 \description{
-Apply Hard Threshold.
+Apply Hard Threshold
 }
 \examples{
 f <- MakeSignal('HeaviSine',2^3)
@@ -25,4 +25,7 @@ wc <- FWT_PO(f, L, qmf)
 thr <- 2
 wct <- HardThresh(wc, thr)
 fhard <- IWT_PO(wct, L, qmf)
+}
+\seealso{
+\code{\link{SoftThresh}}.
 }
