@@ -2,7 +2,7 @@
 % Please edit documentation in R/IWT2_TI.R
 \name{IWT2_TI}
 \alias{IWT2_TI}
-\title{Invert 2-d Translation Invariant Wavelet Transform.}
+\title{Invert 2-d Translation Invariant Wavelet Transform}
 \usage{
 IWT2_TI(tiwt, L, qmf)
 }
@@ -17,7 +17,7 @@ IWT2_TI(tiwt, L, qmf)
 \code{x} 2-d image reconstructed from translation-invariant transform TIWT.
 }
 \description{
-Invert 2-d Translation Invariant Wavelet Transform.
+Invert 2-d Translation Invariant Wavelet Transform
 }
 \examples{
 x <- matrix(rnorm(2^2), ncol=2)

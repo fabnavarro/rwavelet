@@ -1,4 +1,4 @@
-#' Invert 2-d Translation Invariant Wavelet Transform.
+#' Invert 2-d Translation Invariant Wavelet Transform
 #'
 #' @export IWT2_TI
 #' @param tiwt translation-invariant wavelet transform table, (3(J-L)+1)n by n.
