@@ -2,7 +2,7 @@
 % Please edit documentation in R/IWT3_PO.R
 \name{IWT3_PO}
 \alias{IWT3_PO}
-\title{Inverse 3-d MRA wavelet transform (periodized, orthogonal).}
+\title{Inverse 3-d MRA Wavelet Transform (periodized, orthogonal)}
 \usage{
 IWT3_PO(wc, L, qmf)
 }
@@ -17,12 +17,12 @@ IWT3_PO(wc, L, qmf)
 \code{x} 3-d signal reconstructed from wc.
 }
 \description{
-If \code{wc} is the result of a forward 3d wavelet transform, with \code{wc <- FWT3_PO(x, L, qmf)}.
+If \code{wc} is the result of a forward 3-d wavelet transform, with \code{wc <- FWT3_PO(x, L, qmf)}.
 then \code{x <- IWT3_PO(wc, L, qmf)} reconstructs \code{x} exactly
 \code{qmf} is a nice qmf, e.g. one made by \code{\link{MakeONFilter}}.
 }
 \details{
-3-D counterpart of Donoho's IWT2_PO, original matlab code by
+3-d counterpart of Donoho's IWT2_PO, original matlab code by
 Vicki Yang and Brani Vidakovic.
 }
 \examples{
