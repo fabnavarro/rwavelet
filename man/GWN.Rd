@@ -2,7 +2,7 @@
 % Please edit documentation in R/GWN.R
 \name{GWN}
 \alias{GWN}
-\title{Generation of Gaussian White Noise.}
+\title{Generation of Gaussian White Noise}
 \usage{
 GWN(n, sigma)
 }
@@ -15,8 +15,8 @@ GWN(n, sigma)
 \code{epsilon} resulting noise.
 }
 \description{
-Generation of Gaussian White Noise.
+Generation of Gaussian White Noise
 }
 \examples{
-GWN(10,0.1)
+GWN(10, 0.1)
 }
