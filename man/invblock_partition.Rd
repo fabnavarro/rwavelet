@@ -7,7 +7,7 @@
 invblock_partition(x, n, L)
 }
 \arguments{
-\item{x}{noisy wc at a given scale.}
+\item{x}{partition of coefficients by block.}
 
 \item{n}{scale.}
 

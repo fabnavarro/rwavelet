@@ -1,4 +1,5 @@
 #' Inversion of the 2d block partition
+#'
 #' @export invblock_partition2d
 #' @param x partition of coefficients by block.
 #' @param n scale.

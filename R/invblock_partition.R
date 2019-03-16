@@ -1,7 +1,7 @@
 #' Inversion of the 1d block partition
 #'
 #' @export invblock_partition
-#' @param x noisy wc at a given scale.
+#' @param x partition of coefficients by block.
 #' @param n scale.
 #' @param L block size.
 #' @examples
