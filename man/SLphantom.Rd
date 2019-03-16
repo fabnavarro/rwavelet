@@ -3,8 +3,8 @@
 \docType{data}
 \name{SLphantom}
 \alias{SLphantom}
-\title{3d Shepp-Logan phantom}
-\format{A numeric array of size 64x64x64}
+\title{3-d Shepp-Logan phantom}
+\format{A numeric array of size 64x64x64.}
 \source{
 \url{http://tomography.o-x-t.com/2008/04/13/3d-shepp-logan-phantom/}
 }
@@ -13,7 +13,7 @@ data(SLphantom)
 }
 \description{
 A dataset containing a 3d head phantom that can be used
-to test 3-D reconstruction algorithms.
+to test 3-d reconstruction algorithms.
 Shepp-Logan phantom is well-known imitation of human cerebral.
 }
 \keyword{datasets}
