@@ -2,7 +2,7 @@
 % Please edit documentation in R/FWT2_PO.R
 \name{FWT2_PO}
 \alias{FWT2_PO}
-\title{2-d MRA wavelet transform (periodized, orthogonal).}
+\title{2-d MRA Forwad Wavelet Transform (periodized, orthogonal)}
 \usage{
 FWT2_PO(x, L, qmf)
 }
@@ -17,7 +17,7 @@ FWT2_PO(x, L, qmf)
 \code{wc} 2-d wavelet transform.
 }
 \description{
-A two-dimensional Wavelet Transform is computed for the array x.
+A two-dimensional wavelet transform is computed for the array x.
 \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
 To reconstruct, use \code{\link{IWT2_PO}}.
 }

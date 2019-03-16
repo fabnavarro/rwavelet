@@ -1,6 +1,6 @@
-#' 2-d MRA wavelet transform (periodized, orthogonal).
+#' 2-d MRA Forwad Wavelet Transform (periodized, orthogonal)
 #'
-#' A two-dimensional Wavelet Transform is computed for the array x.
+#' A two-dimensional wavelet transform is computed for the array x.
 #' \code{qmf} filter may be obtained from \code{\link{MakeONFilter}}.
 #' To reconstruct, use \code{\link{IWT2_PO}}.
 #'
