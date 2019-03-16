@@ -4,7 +4,7 @@
 \name{RaphNMR}
 \alias{RaphNMR}
 \title{Nuclear magnetic resonance (NMR) signal}
-\format{A numeric vector of length 1024}
+\format{A numeric vector of length 1024.}
 \source{
 MRS Unit, VA Medical Center, San Francisco. Adrain Maudsley, Ph.D., Professor of Radiology.
     This NMR signal was obtained from Chris Raphael, then a
@@ -13,9 +13,9 @@ MRS Unit, VA Medical Center, San Francisco. Adrain Maudsley, Ph.D., Professor of
     for restoring NMR Spectra.
 }
 \usage{
-data(RaphNMR)
+data(RaphNMR).
 }
 \description{
-A dataset containing a NMR signal
+A dataset containing a NMR signal.
 }
 \keyword{datasets}
