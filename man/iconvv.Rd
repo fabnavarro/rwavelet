@@ -2,7 +2,7 @@
 % Please edit documentation in R/iconvv.R
 \name{iconvv}
 \alias{iconvv}
-\title{Convolution Tool for Two-Scale Transform.}
+\title{Convolution tool for two-scale transform}
 \usage{
 iconvv(f, x)
 }
