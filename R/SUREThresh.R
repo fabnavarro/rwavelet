@@ -9,7 +9,6 @@
 SUREThresh <- function(y) {
   thresh <- ValSUREThresh(y)
   x <- HardThresh(y, thresh)
-  
 }
 
 # Copyright (c) 1993-5.  Jonathan Buckheit, David Donoho and Iain Johnstone
