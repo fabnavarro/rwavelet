@@ -8,7 +8,7 @@
 #' @return \code{ws} result of applying SUREThresh to each dyadic block.
 
 MultiSURE <- function(wc, L) {
-  d <- dyadlength(wcoef)
+  d <- dyadlength(wc)
   J <- d$y
   n <- d$x
   for (j in (J - 1):L) {
