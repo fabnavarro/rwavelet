@@ -1,0 +1,25 @@
+#' Apply Shrinkage to Wavelet Coefficients
+#'
+#' SURE referes to Stein's Unbiased Risk Estimate.
+#'
+#' @export MultiSURE
+#' @param wc  Wavelet Transform of noisy sequence with N(0,1) noise.
+#' @param L low-frequency cutoff for Wavelet Transform.
+#' @return \code{ws} result of applying SUREThresh to each dyadic block.
+
+MultiSURE <- function(wc, L) {
+  d <- dyadlength(wcoef)
+  J <- d$y
+  n <- d$x
+  for (j in (J - 1):L) {
+    wc[dyad(j)] <- SUREThresh(wc[dyad(j)])
+  }
+  ws <- wc
+  return(ws)
+}
+
+# Copyright (c) 1993-5.  Jonathan Buckheit, David Donoho and Iain Johnstone
+
+# Part of Wavelab Version 850 Built Tue Jan 3 13:20:39 EST 2006 This is
+# Copyrighted Material For Copying permissions see COPYING.m Comments? e-mail
+# wavelab@stat.stanford.edu
