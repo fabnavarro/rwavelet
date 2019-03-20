@@ -3,12 +3,14 @@
 #' SURE referes to Stein's Unbiased Risk Estimate.
 #'
 #' @export SUREThresh
-#' @return y  Noisy Data with Std. Deviation = 1.
-#' @return thresh Threshold used.
+#' @param y  Noisy Data with Std. Deviation = 1.
+#' @return \code{x} Estimate of mean vector
+#' @return \code{thresh} Threshold used.
 
 SUREThresh <- function(y) {
   thresh <- ValSUREThresh(y)
   x <- HardThresh(y, thresh)
+  return(list(x=x,thresh=thresh))
 }
 
 # Copyright (c) 1993-5.  Jonathan Buckheit, David Donoho and Iain Johnstone

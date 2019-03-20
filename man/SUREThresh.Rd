@@ -6,10 +6,13 @@
 \usage{
 SUREThresh(y)
 }
+\arguments{
+\item{y}{Noisy Data with Std. Deviation = 1.}
+}
 \value{
-y  Noisy Data with Std. Deviation = 1.
+\code{x} Estimate of mean vector
 
-thresh Threshold used.
+\code{thresh} Threshold used.
 }
 \description{
 SURE referes to Stein's Unbiased Risk Estimate.
