@@ -2,7 +2,7 @@
 #'
 #' @export VisuThresh
 #' @param y Signal upon which to perform visually calibrated Adaptive Smoothing.
-#' @param thresh low-resolution cutoff for Wavelet Transform.
+#' @param thresh 'hard' or 'soft'.
 #' @return \code{x} result of applying VisuThresh.
 #' @references
 #' D.L. Donoho and I.M. Johnstone (1994). Ideal spatial adaptation by wavelet shrinkage. \emph{Biometrika}, 81(3), 425--455.
