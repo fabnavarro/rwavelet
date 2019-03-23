@@ -12,7 +12,7 @@ MultiSURE <- function(wc, L) {
   J <- d$y
   n <- d$x
   for (j in (J - 1):L) {
-    wc[dyad(j)] <- SUREThresh(wc[dyad(j)])
+    wc[dyad(j)] <- SUREThresh(wc[dyad(j)])$x
   }
   ws <- wc
   return(ws)
