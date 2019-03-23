@@ -5,12 +5,12 @@
 #' @param L low-frequency cutoff for Wavelet Transform
 #' @return \code{x} result of applying VisuThresh to each High Frequency Dyadic Block.
 
-MultiVisu <- function(wc,L) {
+MultiVisu <- function(wc, L) {
   d <- dyadlength(wc)
   J <- d$y
   n <- d$x
   ws <- wc
-  ws[(2^(L)+1):n] = VisuThresh(wc[(2^(L)+1):n])
+  ws[(2^(L) + 1):n] <- VisuThresh(wc[(2^(L) + 1):n])
 }
 
 # Copyright (c) 1993-5.  Jonathan Buckheit, David Donoho and Iain Johnstone
