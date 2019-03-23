@@ -9,7 +9,7 @@ VisuThresh(y, thresh = "soft")
 \arguments{
 \item{y}{Signal upon which to perform visually calibrated Adaptive Smoothing.}
 
-\item{thresh}{low-resolution cutoff for Wavelet Transform.}
+\item{thresh}{'hard' or 'soft'.}
 }
 \value{
 \code{x} result of applying VisuThresh.
