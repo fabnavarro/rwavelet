@@ -15,6 +15,7 @@ ValSUREThresh <- function(x) {
   risk <- (n - (2 * (1:n)) + s)/n
   ibest <- which.min(risk)
   thresh <- sqrt(a[ibest])
+  return(thresh)
 }
 
 # Copyright (c) 1993-5.  Jonathan Buckheit, David Donoho and Iain Johnstone
