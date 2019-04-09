@@ -5,7 +5,7 @@ Version: 0.4.0
 Date: 2019-03-14
 Author: F. Navarro and C. Chesneau
 Maintainer: Navarro Fabien <fabien.navarro@ensai.fr>
-Description: Perform wavelet analysis (orthogonal, translation invariant, tensorial, 1-2-3d transforms, thresholding, block thresholding, linear,...) with applications to data compression or denoising/regression. The core of the code is a port of 'MATLAB' Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram (<https://statweb.stanford.edu/~wavelab/>).
+Description: Perform wavelet analysis (orthogonal,translation invariant, tensorial, 1-2-3d transforms, thresholding, block thresholding, linear,...) with applications to data compression or denoising/regression. The core of the code is a port of 'MATLAB' Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram (<https://statweb.stanford.edu/~wavelab/>).
 URL: http://github.com/fabnavarro/rwavelet
 BugReports: http://github.com/fabnavarro/rwavelet/issues
 License: LGPL (>= 2)
