@@ -13,5 +13,5 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
 Imports: signal
-Suggests: knitr, rmarkdown, imager, rgl, misc3d
+Suggests: knitr, rmarkdown, imager
 VignetteBuilder: knitr
