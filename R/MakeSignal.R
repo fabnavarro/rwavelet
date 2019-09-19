@@ -174,6 +174,7 @@ MakeSignal <- function(name, n) {
     sig2 <- 3 * g[i2] * exp((0 + (0 + (0 + (0 + (0 + (0 + (0 + (0 + (0 +
       (0 + (0+1i))))))))))) * N/4 * pi * j)
     sig <- sig1 + sig2
+    sig <- Re(sig)
   }
   if (name == "sineoneoverx") {
     # sin(1/x) in Mallat's book
