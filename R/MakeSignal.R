@@ -161,21 +161,6 @@ MakeSignal <- function(name, n) {
     enveloppe[(7 * n/8 + 1):n] <- rev(enveloppe[1:(n/8)])
     sig <- sig * enveloppe
   }
-  if (name == "Gabor") {
-    # two modulated Gabor functions in Mallat's book
-    N <- 512
-    t <- (-N:N) * 5/N
-    j <- (1:N)/N
-    g <- exp(-t^2 * 20)
-    i1 <- ((2 * N/4 + 1):(2 * N/4 + N))
-    i2 <- ((N/4 + 1):(N/4 + N))
-    sig1 <- 3 * g[i1] * exp((0 + (0 + (0 + (0 + (0 + (0 + (0 + (0 + (0 +
-      (0 + (0+1i))))))))))) * N/16 * pi * j)
-    sig2 <- 3 * g[i2] * exp((0 + (0 + (0 + (0 + (0 + (0 + (0 + (0 + (0 +
-      (0 + (0+1i))))))))))) * N/4 * pi * j)
-    sig <- sig1 + sig2
-    sig <- Re(sig)
-  }
   if (name == "sineoneoverx") {
     # sin(1/x) in Mallat's book
     N <- 1024
@@ -276,6 +261,20 @@ MakeSignal <- function(name, n) {
     # zero-mean
     bias <- sum(sig)/n
     sig <- sig - bias
+  }
+  if (name == "Gabor") {
+    # two modulated Gabor functions in Mallat's book
+    N <- 512
+    sig <- rep(0, N)
+    t <- (-N:N) * 5/N
+    j <- (1:N)/N
+    g <- exp(-t^2 * 20)
+    i1 <- ((2 * N/4 + 1):(2 * N/4 + N))
+    i2 <- ((N/4 + 1):(N/4 + N))
+    sig1 <- 3*g[i1]*exp(1i*N/16*pi*j)
+    sig2 <- 3*g[i2]*exp(1i*N/4*pi*j)
+    sig <- sig1 + sig2
+    sig <- Re(sig)
   } else {
     warning("Allowable Names are listed above")
     print("HeaviSine")
