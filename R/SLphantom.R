@@ -6,5 +6,4 @@
 #'
 #' @format A numeric array of size 64x64x64.
 #' @usage data(SLphantom)
-#' @source \url{http://tomography.o-x-t.com/2008/04/13/3d-shepp-logan-phantom/}
 "SLphantom"
