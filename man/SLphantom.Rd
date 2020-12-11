@@ -5,9 +5,6 @@
 \alias{SLphantom}
 \title{3-d Shepp-Logan phantom}
 \format{A numeric array of size 64x64x64.}
-\source{
-\url{http://tomography.o-x-t.com/2008/04/13/3d-shepp-logan-phantom/}
-}
 \usage{
 data(SLphantom)
 }
