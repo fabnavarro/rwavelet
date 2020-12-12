@@ -2,7 +2,7 @@ Package: rwavelet
 Type: Package
 Title: Wavelet Analysis
 Version: 0.4.1
-Date: 2020-11-12
+Date: 2020-12-12
 Author: F. Navarro and C. Chesneau
 Maintainer: Navarro Fabien <fnavarro@math.cnrs.fr>
 Description: Perform wavelet analysis (orthogonal,translation invariant, tensorial, 1-2-3d transforms, thresholding, block thresholding, linear,...) with applications to data compression or denoising/regression. The core of the code is a port of 'MATLAB' Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram (<https://statweb.stanford.edu/~wavelab/>).
