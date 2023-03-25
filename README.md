@@ -1,16 +1,12 @@
-rwavelet
-========
+# rwavelet
 
-[![Build
-Status](https://travis-ci.org/fabnavarro/rwavelet.svg)](https://travis-ci.org/fabnavarro/rwavelet)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rwavelet)](http://cran.r-project.org/package=rwavelet)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rwavelet)](http://cran.r-project.org/package=rwavelet)
 ![CRAN Downloads](http://cranlogs.r-pkg.org/badges/rwavelet) ![CRAN
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rwavelet)
 
 Wavelet Analysis
 
-Download and Install
---------------------
+## Download and Install
 
 Install the devtools package if you haven’t already.
 
@@ -32,15 +28,14 @@ To install the CRAN version of the package, type the following:
 install.packages("rwavelet")
 ```
 
-General features
-----------------
+## General features
 
 -   1d, 2d and 3d MRA Forward/Inverse Wavelet Transforms Periodized
-    Orthogonal (FWT\_PO, IFWT\_PO)
+    Orthogonal (FWT_PO, IFWT_PO)
 -   1d, 2d tensor Forward/Inverse Wavelet Transform Periodized
-    Orthogonal (FTWT\_PO, ITWT\_PO)
+    Orthogonal (FTWT_PO, ITWT_PO)
 -   1d, 2d Translation Invariant Forward/Inverse Wavelet Transform
-    (FWT\_TI, IWT\_TI, also know as redundant wavelet transform, maximal
+    (FWT_TI, IWT_TI, also know as redundant wavelet transform, maximal
     overlap wavelet transform, undecimated wavelet transform or
     stationary wavelet transform)
 -   Linear wavelet estimation/approximation (using 2 fold cross
@@ -56,8 +51,7 @@ To obtain the complete list of package functions, simply type
 help(package = "rwavelet")
 ```
 
-Getting Started
----------------
+## Getting Started
 
 Here is an example of denoising of an experimental nuclear magnetic
 resonance (NMR) spectrum. We start by loading the data:
@@ -126,25 +120,24 @@ Then, to view the vignette
 vignette("rwaveletvignette")
 ```
 
-How to cite
------------
+## How to cite
 
 ``` r
 citation("rwavelet")
 #> 
 #> To cite rwavelet in publications use:
 #> 
-#>   F. Navarro and C. Chesneau (2019). R package rwavelet: Wavelet
-#>   Analysis (Version 0.4.0). Available from
-#>   http://github.com/fabnavarro/rwavelet
+#>   F. Navarro and C. Chesneau (2020). R package rwavelet: Wavelet
+#>   Analysis (Version 0.4.1). Available from
+#>   https://github.com/fabnavarro/rwavelet
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
 #>     title = {R package {rwavelet}: Wavelet Analysis},
 #>     author = {F. Navarro and C. Chesneau},
-#>     year = {2019},
-#>     note = {(Version 0.4.0)},
-#>     url = {http://github.com/fabnavarro/rwavelet},
+#>     year = {2020},
+#>     note = {(Version 0.4.1)},
+#>     url = {https://github.com/fabnavarro/rwavelet},
 #>   }
 ```
