@@ -1,6 +1,6 @@
 #' Adaptive Threshold Selection Using Principle of SURE
 #'
-#' SURE referes to Stein's Unbiased Risk Estimate.
+#' SURE refers to Stein's Unbiased Risk Estimate.
 #'
 #' @export SUREThresh
 #' @param y  Noisy Data with Std. Deviation = 1.

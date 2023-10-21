@@ -15,5 +15,5 @@ SUREThresh(y)
 \code{thresh} Threshold used.
 }
 \description{
-SURE referes to Stein's Unbiased Risk Estimate.
+SURE refers to Stein's Unbiased Risk Estimate.
 }
