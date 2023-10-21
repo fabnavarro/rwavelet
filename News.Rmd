@@ -23,3 +23,6 @@ rwavelet News
 * Added 1-d Wavelet Block Thresholding (BlockThresh)
 * 2-Fold Cross-Validation for choising the truncation parameter (CVlinear)
 * Added 2-d Translation Invariant Forward/Inverse Wavelet Transform (FWT2_TI, IWT2_TI)
+
+# rwavelet 0.4.xxx
+* Add Wavelet Feature EXtraction `WaveFEX` (might be useful for functional data analysis, time-series/curve clustering).
