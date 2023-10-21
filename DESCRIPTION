@@ -11,7 +11,7 @@ BugReports: https://github.com/fabnavarro/rwavelet/issues
 License: LGPL (>= 2)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.2.3
 Imports: signal
 Suggests: knitr, rmarkdown, misc3d, imager
 VignetteBuilder: knitr

@@ -4,7 +4,9 @@
 \name{SLphantom}
 \alias{SLphantom}
 \title{3-d Shepp-Logan phantom}
-\format{A numeric array of size 64x64x64.}
+\format{
+A numeric array of size 64x64x64.
+}
 \usage{
 data(SLphantom)
 }
