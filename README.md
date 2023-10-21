@@ -1,6 +1,10 @@
 # rwavelet
 
+<<<<<<< HEAD
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rwavelet)](http://cran.r-project.org/package=rwavelet)
+=======
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rwavelet)](http://cran.r-project.org/package=rwavelet)
+>>>>>>> 61db0c9313fc47678da3719e9ba66cedc4838fc2
 ![CRAN Downloads](http://cranlogs.r-pkg.org/badges/rwavelet) ![CRAN
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rwavelet)
 
