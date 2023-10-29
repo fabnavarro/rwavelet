@@ -106,6 +106,8 @@ plot(Ywd, ylim=c(-20,20), xlab="", ylab="", main = "Estimated Coefficients")
 
 See the [package
 vignette](http://fnavarro.perso.math.cnrs.fr/rpackage/rwaveletvignette.html)
+or
+[documentation](https://fnavarro.perso.math.cnrs.fr/rpackage/rwavelet.pdf)
 for more details. You could also build and see the vignette associated
 with the package using the following lines of code
 
@@ -126,8 +128,8 @@ vignette("rwaveletvignette")
 citation("rwavelet")
 #> To cite rwavelet in publications use:
 #> 
-#>   F. Navarro and C. Chesneau (2020). R package rwavelet: Wavelet
-#>   Analysis (Version 0.4.1). Available from
+#>   F. Navarro and C. Chesneau (2023). R package rwavelet: Wavelet
+#>   Analysis (Version 0.4.1.99999). Available from
 #>   https://github.com/fabnavarro/rwavelet
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -135,8 +137,8 @@ citation("rwavelet")
 #>   @Manual{,
 #>     title = {R package {rwavelet}: Wavelet Analysis},
 #>     author = {F. Navarro and C. Chesneau},
-#>     year = {2020},
-#>     note = {(Version 0.4.1)},
+#>     year = {2023},
+#>     note = {(Version 0.4.1.99999)},
 #>     url = {https://github.com/fabnavarro/rwavelet},
 #>   }
 ```

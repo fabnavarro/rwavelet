@@ -92,7 +92,7 @@ matlines(-rep(lambda, n), lwd=2,col="red",lty=1)
 plot(Ywd, ylim=c(-20,20), xlab="", ylab="", main = "Estimated Coefficients")
 ```
 
-See the [package vignette](http://fnavarro.perso.math.cnrs.fr/rpackage/rwaveletvignette.html) for more details.
+See the [package vignette](http://fnavarro.perso.math.cnrs.fr/rpackage/rwaveletvignette.html) or [documentation](https://fnavarro.perso.math.cnrs.fr/rpackage/rwavelet.pdf) for more details.
 You could also build and see the vignette associated with the package using the following lines of code
 ```{r, eval=FALSE}
 devtools::install_github("fabnavarro/rwavelet", build_vignettes = TRUE)
