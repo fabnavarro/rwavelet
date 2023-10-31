@@ -21,3 +21,4 @@ rwavelet News
 
 -   Add Wavelet Feature EXtraction `WaveFEX` (might be useful for
     functional data analysis, time-series/curve clustering).
+-   add `BlockThresh2d` wavelet block thresholding for image denoising.
