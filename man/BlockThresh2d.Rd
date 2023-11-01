@@ -4,7 +4,15 @@
 \alias{BlockThresh2d}
 \title{2d Wavelet Block thresholding}
 \usage{
-BlockThresh2d(wc, j0, hatsigma, L, qmf, thresh = "soft")
+BlockThresh2d(
+  wc,
+  j0,
+  hatsigma,
+  L = 4,
+  qmf,
+  lamb = 4.50524,
+  thresh = "JamesStein"
+)
 }
 \arguments{
 \item{wc}{wavelet coefficients.}
@@ -17,10 +25,12 @@ BlockThresh2d(wc, j0, hatsigma, L, qmf, thresh = "soft")
 
 \item{qmf}{Orthonormal quadrature mirror filter.}
 
-\item{thresh}{'hard' or 'soft'.}
+\item{lamb}{Threshold parameter.}
+
+\item{thresh}{Thresholding rule: 'hard', or 'JamesStein'.}
 }
 \value{
-\code{wcb} wavelet coefficient estimators.
+\code{wcb} Thresholded wavelet coefficients.
 }
 \description{
 This function is used to threshold the coefficients by group (or block).
