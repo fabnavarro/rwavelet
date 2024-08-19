@@ -13,9 +13,9 @@ knitr::opts_chunk$set(
 ```
 # rwavelet
 
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rwavelet)](http://cran.r-project.org/package=rwavelet)
-![CRAN Downloads](http://cranlogs.r-pkg.org/badges/rwavelet)
-![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rwavelet)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/rwavelet)](http://cran.r-project.org/package=rwavelet)
+![CRAN Downloads](https://cranlogs.r-pkg.org/badges/rwavelet)
+![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/rwavelet)
 
 Wavelet Analysis
 
