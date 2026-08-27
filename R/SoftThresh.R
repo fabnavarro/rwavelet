@@ -3,7 +3,8 @@
 #' @export SoftThresh
 #' @param y Noisy Data.
 #' @param t Threshold.
-#' @return \code{x} filtered result (y 1_{|y|>t}).
+#' @return A numeric vector with entries
+#'   \eqn{x_i = \mathrm{sign}(y_i)\max(|y_i| - t, 0)}{x_i = sign(y_i) * max(abs(y_i) - t, 0)}.
 #' @examples
 #' f <- MakeSignal('HeaviSine', 2^3)
 #' qmf <- MakeONFilter('Daubechies', 10)

@@ -12,7 +12,8 @@ SoftThresh(y, t)
 \item{t}{Threshold.}
 }
 \value{
-\code{x} filtered result (y 1_{|y|>t}).
+A numeric vector with entries
+  \eqn{x_i = \mathrm{sign}(y_i)\max(|y_i| - t, 0)}{x_i = sign(y_i) * max(abs(y_i) - t, 0)}.
 }
 \description{
 Apply Soft Threshold

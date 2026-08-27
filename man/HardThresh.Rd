@@ -12,7 +12,8 @@ HardThresh(y, t)
 \item{t}{Threshold.}
 }
 \value{
-\code{x} filtered result (y 1_{|y|>t}).
+A numeric vector with entries
+  \eqn{x_i = y_i \mathbf{1}_{\{|y_i| > t\}}}{x_i = y_i * 1(abs(y_i) > t)}.
 }
 \description{
 Apply Hard Threshold

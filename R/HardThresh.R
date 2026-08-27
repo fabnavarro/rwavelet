@@ -3,7 +3,8 @@
 #' @export HardThresh
 #' @param y Noisy Data.
 #' @param t Threshold.
-#' @return \code{x} filtered result (y 1_{|y|>t}).
+#' @return A numeric vector with entries
+#'   \eqn{x_i = y_i \mathbf{1}_{\{|y_i| > t\}}}{x_i = y_i * 1(abs(y_i) > t)}.
 #' @examples
 #' f <- MakeSignal('HeaviSine',2^3)
 #' qmf <- MakeONFilter('Daubechies', 10)
