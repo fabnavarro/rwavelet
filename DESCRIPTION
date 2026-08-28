@@ -2,7 +2,7 @@ Package: rwavelet
 Type: Package
 Title: Wavelet Analysis
 Version: 0.4.2
-Date: 2026-08-27
+Date: 2026-08-28
 Authors@R: c(
     person(
         given = "Fabien",
@@ -11,13 +11,12 @@ Authors@R: c(
         email = "fnavarro@math.cnrs.fr"
     ),
     person(
-        given = "C.",
+        given = "Christophe",
         family = "Chesneau",
         role = "aut"
     )
     )
-Maintainer: Navarro Fabien <fnavarro@math.cnrs.fr>
-Description: Perform wavelet analysis (orthogonal,translation invariant, tensorial, 1-2-3d transforms, thresholding, block thresholding, linear,...) with applications to data compression, denoising/regression or clustering. The core of the code is a port of 'MATLAB' Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram (<https://statweb.stanford.edu/~wavelab/>).
+Description: Perform wavelet analysis (orthogonal,translation invariant, tensorial, 1-2-3d transforms, thresholding, block thresholding, linear,...) with applications to data compression, denoising/regression or clustering. The core of the code is a port of 'MATLAB' Wavelab toolbox written by D. Donoho, A. Maleki and M. Shahram.
 URL: https://github.com/fabnavarro/rwavelet
 BugReports: https://github.com/fabnavarro/rwavelet/issues
 License: LGPL (>= 2)
